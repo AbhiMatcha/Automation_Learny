@@ -22,9 +22,9 @@ function signup(username,pass)
     },  60);
     }); 
 
-	// afterAll(function() {
- //  	browser.close()
- //  	});
+	afterAll(function() {
+  	browser.close()
+  	});
 
 	beforeAll(function(){
 		SignupPage.open('signup');
@@ -40,6 +40,7 @@ function signup(username,pass)
 	});
 
 	it('-----> should be signed-up by user and confirm alert is displayed',function() {
+		expect(SignupPage.Signup.Resend_email.isVisible()).toBe(true);
 		console.log('Test case passed : User successfully signed-up and confirm alert is displayed');
 	});	
 	

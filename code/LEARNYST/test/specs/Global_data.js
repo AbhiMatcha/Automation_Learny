@@ -1,3 +1,6 @@
+/*
+ ***** Contians all user defined variables *****
+*/
  Learnyst = {
 	TestData:{
 		IMPLICIT_WAIT_TIME: 15000,

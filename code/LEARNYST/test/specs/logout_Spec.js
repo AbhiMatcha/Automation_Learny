@@ -15,14 +15,6 @@ describe(" -- Testing Logout Page -- ", function() {
 
 function logout(userName,pass)
 {   
-  // beforeAll(function() {
-    LogoutPage.open('learn');
-    browser.setViewportSize({
-      width: 1700,
-      height: 1080
-      // }); 
-  }); 
-
   beforeEach(function() {
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().install();
@@ -35,14 +27,23 @@ function logout(userName,pass)
       browser.close()
   });
 
- it('-----> should be logged-out by user 1',function() {
+  beforeAll(function() {
+    LogoutPage.open('learn');
+    browser.setViewportSize({
+      width: 1600,
+      height: 1200
+      }); 
     LogoutPage.Logout.login_signupFlow.click();
     LoginCom.login_email.setValue(userName);
     LoginCom.login_Password.setValue(pass);
-    LogoutPage.Logout.LoginButton_signupFlow.click(); 
-    LogoutPage.Logout.User_Profile.waitForExist(5000);
+    LogoutPage.Logout.LoginButton_signupFlow.click();
     LogoutPage.Logout.User_Profile.click();
     LogoutPage.Logout.Logout_button.click();
+  }); 
+  
+ it('-----> should be logged-out by user 1',function() {
+   
+    LogoutPage.Logout.loggedout_Verify.waitForExist(5000);
     expect(LogoutPage.Logout.loggedout_Verify.isVisible()).toBe(true);
     console.log("Logout is successfull ");  
      });

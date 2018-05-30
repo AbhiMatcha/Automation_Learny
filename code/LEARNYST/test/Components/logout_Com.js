@@ -11,6 +11,7 @@ var Logout = Object.create(page,{
     LoginButton_signupFlow: {get: function(){return browser.element('#js-signin');}},
     login_signupFlow : {get: function() {return browser.element('#nav-sign-up');}},
     loggedout_Verify: {get: function() {return browser.element('.learnyst-login-content');}},
+    // loggedout_Verify: {get: function() {return browser.element('.js-skipLogin');}},
  });
 
 module.exports = Logout;

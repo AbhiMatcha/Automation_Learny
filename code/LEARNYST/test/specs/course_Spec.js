@@ -37,13 +37,16 @@ function enrollCourse()
   });
 
   signupSpec.signup(global.forenroll.Random_email(),global.forenroll.password);
+  coursePage.course.selectCourse()="Learn";
+  console.log(coursePage.course.selectCourse);
   
   it('-----> course should be enrolled by user',function() {
      // coursePage.course.selectCourse = "My First Course";
      // coursePage.course.selectCourse.click();
-     // coursePage.selectCourse = "My First Course";
      coursePage.course.selectCourse.click();
-     expect(coursePage.course.buyNow.isVisible()).toBe(true);
+     coursePage.course.buyNow.waitForExist(5000);
+     coursePage.course.buyNow.click();
+     // expect(coursePage.course.buyNow.isVisible()).toBe(true);
      console.log('yeah clicked course');
     
    });
