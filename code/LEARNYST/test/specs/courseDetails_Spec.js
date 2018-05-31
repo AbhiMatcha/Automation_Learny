@@ -17,7 +17,7 @@ describe(" -- Testing Course Page -- ", function() {
 function enrollCourse(contact)
 {	
     beforeAll(function(){
-      buycoursePage.buycourse.open('learn/My-First-Course?');
+      buycoursePage.buycourse.open('signup');
       browser.setViewportSize({
           width: 1700,
           height: 1080
@@ -36,11 +36,11 @@ function enrollCourse(contact)
   browser.close()
   });
   
-  it('-----> course should be enrolled by user',function() {
      signupSpec.signup(global.forenroll.Random_email(),global.forenroll.password);
-     //browser.url('http://learnnew.learnyst.com/learn/My-First-Course');
-     //buycoursePage.buycourse.selectCourse.click();
-     browser.doubleClick(buycoursePage.buycourse.selectCourse);
+     
+  
+  it('-----> course should be enrolled by user',function() {
+     buycoursePage.buycourse.selectCourse.click();
      buycoursePage.buycourse.buyNow.click();
      buycoursePage.buycourse.paySecurely.click();
      buycoursePage.buycourse.enterContact.setValue(contact);

@@ -2,6 +2,7 @@
 var component=require('./component'); 
 var page = require('../pages/page');
 var Signup = Object.create(page,{
+   
    Signup_email :{ get:  function()  { return browser.element('#learnystSignup_new_user_user_email');}},
    Signup_Password :{ get:  function()  { return  browser.element('#learnystSignup_new_user_user_password');}},
    open: { value: function()  { page.open.call(this, 'login');}},

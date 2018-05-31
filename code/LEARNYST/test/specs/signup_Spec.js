@@ -12,6 +12,9 @@ describe(" -- Testing signup Page -- ", function() {
 	signup(SignupPage.Signup.Random_email(),SignupPage.Signup.Enter_Password);
 });	
 
+
+	
+
 function signup(username,pass)
 {			
 	beforeEach(function() {
@@ -22,24 +25,27 @@ function signup(username,pass)
     },  60);
     }); 
 
-	// afterAll(function() {
- //  	browser.close()
- //  	});
-
-	beforeAll(function(){
+    beforeAll(function(){
 		SignupPage.open('signup');
 		browser.setViewportSize({
         	width: 1600,
        		 height: 1080
       	});
-      	SignupPage.Signup.Signup_email.setValue(username);
+	});
+
+	// afterAll(function() {
+ //  	browser.close()
+ //  	});
+
+      	
+		
+	
+
+	it('-----> should be signed-up by user and confirm alert is displayed',function() {
+		SignupPage.Signup.Signup_email.setValue(username);
 		SignupPage.Signup.Signup_Password.setValue(pass);
 		SignupPage.Signup.Signup_forFree.click();
 		SignupPage.Signup.Resend_email.waitForExist(5000);
-		
-	});
-
-	it('-----> should be signed-up by user and confirm alert is displayed',function() {
 		expect(SignupPage.Signup.Resend_email.isVisible()).toBe(true);
 		console.log('Test case passed : User successfully signed-up and confirm alert is displayed');
 	});	
