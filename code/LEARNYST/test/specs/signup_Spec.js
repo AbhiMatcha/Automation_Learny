@@ -22,9 +22,9 @@ function signup(username,pass)
     },  60);
     }); 
 
-	afterAll(function() {
-  	browser.close()
-  	});
+	// afterAll(function() {
+ //  	browser.close()
+ //  	});
 
 	beforeAll(function(){
 		SignupPage.open('signup');
