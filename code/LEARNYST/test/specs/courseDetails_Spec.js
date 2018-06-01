@@ -36,7 +36,7 @@ function enrollCourse(contact)
   browser.close()
   });
   
-     signupSpec.signup(global.forenroll.Random_email(),global.forenroll.password);
+     signupSpec.signup(global.forenroll.Random_email.value(),global.forenroll.password);
      
   
   it('-----> course should be enrolled by user',function() {

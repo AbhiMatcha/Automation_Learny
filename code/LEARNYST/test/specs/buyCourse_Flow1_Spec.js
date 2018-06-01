@@ -13,13 +13,12 @@ Scenario: 1. User should be signed-in through course page.
           4. user should be able to access the course.
 */
 describe(" -- Testing Course Page -- ", function() {
-  buyCourseFlow1(global.TestData.CONTACT,global.TestData.COUPON,global.forenroll.Random_email(),global.forenroll.password);
+  buyCourseFlow1(global.TestData.CONTACT,global.TestData.COUPON,global.forenroll.Random_email.value(),global.forenroll.password);
 });
 
 function buyCourseFlow1(contact,coupon,email,pass)
 {	
   beforeEach(function() {
-    console.log('i am here 1');
       timerCallback = jasmine.createSpy("timerCallback");
       jasmine.clock().install();
       setTimeout(function() {
@@ -28,7 +27,6 @@ function buyCourseFlow1(contact,coupon,email,pass)
     }); 
 
   beforeAll(function(){
-    console.log('i am here 2');
       buycourseFlow1Page.buycourse.open('learn/My-First-Course?');
       browser.setViewportSize({
           width: 1700,
@@ -41,7 +39,6 @@ function buyCourseFlow1(contact,coupon,email,pass)
   });
 
   it('-----> course should be enrolled by user',function() {
-     console.log('i am here 3');
      logoutCom.login_signupFlow.click();
      buycourseFlow1Page.buycourseFlow1com.signUp.click();
      buycourseFlow1Page.buycourseFlow1com.SignupEmail.setValue(email);

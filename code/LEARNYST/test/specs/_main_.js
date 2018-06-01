@@ -10,7 +10,23 @@ Scenario: 1. Run signup fucntion
 		  2. Run Logout function
 		  3. Run Login Function
 */
+describe(" -- Testing signup Page -- ", function() {
+ it('-----> user should be signed-up by user',function() {
+     signupSpec();
+   });
+});
 
-loginSpec();
-logoutSpec();
-signupSpec();
+describe(" -- Testing login Page -- ", function() {
+ it('-----> user should be logged-in by user',function() {
+     loginSpec();
+   });
+});
+
+describe(" -- Testing logout Page -- ", function() {
+ it('-----> user should be logged-out by user',function() {
+     logoutSpec();
+   });
+});
+
+
+

@@ -40,14 +40,17 @@
     password:'abhi1234'
   },
   forenroll:{
-    Random_email: { value: function(){
-     var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-     var email = '';
-     for(var i=0; i<15; i++){
-     email += chars[Math.floor(Math.random() * chars.length)];
+    Random_email: { 
+      value: function(){
+        var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        var email = '';
+        for(var i=0; i<15; i++){
+          email += chars[Math.floor(Math.random() * chars.length)];
+        }
+        var emailID= email + '@yopmail.com';
+        return emailID;
       }
-     var emailID= email + '@yopmail.com';
-     return emailID;}},
+    },
     password:'abhi1234'
   },
   enrolled:{

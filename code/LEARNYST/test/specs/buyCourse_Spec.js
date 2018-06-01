@@ -37,7 +37,7 @@ function enrollCourse(contact)
   });
   
   it('-----> course should be enrolled by user',function() {
-     signupSpec.signup(global.forenroll.Random_email(),global.forenroll.password);
+     signupSpec.signup(global.forenroll.Random_email.value(),global.forenroll.password);
      //browser.url('http://learnnew.learnyst.com/learn/My-First-Course');
      //buycoursePage.buycourse.selectCourse.click();
      browser.doubleClick(buycoursePage.buycourse.selectCourse);

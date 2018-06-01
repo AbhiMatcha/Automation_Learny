@@ -37,7 +37,7 @@ function applySmartCoupon(smartCoupon)
   browser.close()
   });
 
-  signupSpec.signup(global.forenroll.Random_email(),global.forenroll.password);
+  signupSpec.signup(global.forenroll.Random_email.value(),global.forenroll.password);
   console.log(coursePage.course.selectCourse);
   
   it('-----> course should be enrolled by user',function() {
