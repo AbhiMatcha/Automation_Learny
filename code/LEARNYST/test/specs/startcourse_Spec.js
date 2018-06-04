@@ -36,10 +36,13 @@ function StartCourse(username,password,contact)
 		startCoursePage.startcourse.buyNow.click();
 		startCoursePage.startcourse.Signup_StartCourse.waitForExist(5000);
 		startCoursePage.startcourse.Signup_StartCourse.click();
+		 startCoursePage.startcourse.SignupEmail.waitForExist(5000);
 		startCoursePage.startcourse.SignupEmail.setValue(username);
 		startCoursePage.startcourse.SignupPassword.setValue(password);
 		startCoursePage.startcourse.doSignup.waitForExist(5000);
 		startCoursePage.startcourse.doSignup.click();
+		startCoursePage.startcourse.selectCountry.waitForExist(5000);
+		startCoursePage.startcourse.selectCountry.click();
 		startCoursePage.startcourse.paySecurely.waitForExist(5000);
 		startCoursePage.startcourse.paySecurely.click();
 		startCoursePage.startcourse.enterContact.waitForExist(5000);

@@ -1,4 +1,3 @@
-'use strict';
 var logoutCom = require('../Components/logout_Com');
 var buycourseCom = require('../Components/buyCourse_Com');
 var applyCouponCom=require('../Components/applyCoupon_Com');
@@ -34,9 +33,9 @@ function buyCourseFlow1(contact,coupon,email,pass)
       });
     });
 
-  afterAll(function() {
-  browser.close()
-  });
+  // afterAll(function() {
+  // browser.close()
+  // });
 
   it('-----> course should be enrolled by user',function() {
      logoutCom.login_signupFlow.click();

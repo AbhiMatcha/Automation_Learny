@@ -13,7 +13,7 @@ var startcourse = Object.create(component, {
     verifyLesson2:{ get: function() { return browser.element('.img-responsive');}},
     verifyNavigation:{ get: function() { return browser.element('.line-letter-space');}},
     buyNow:{get: function() { return browser.element('.buyCourse');}},
-    selectCountry:{ get: function() { return browser.element('#country-dd');}},
+    selectCountry:{ get: function() { return browser.element(('#country-dd')[0].value='{"key":"DZ","value":"Algeria"}');}},
     open: { value: function()  { page.open.call(this, 'learn/My-First-Course'); } },
     paySecurely:{get: function() { return browser.element('#js-paynow');}},
     enterContact:{get: function() { return browser.element('#contact');}},
