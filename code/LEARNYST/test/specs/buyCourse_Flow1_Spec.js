@@ -27,10 +27,7 @@ function buyCourseFlow1(contact,coupon,email,pass)
 
   beforeAll(function(){
       buycourseFlow1Page.buycourse.open('learn/My-First-Course?');
-      browser.setViewportSize({
-          width: 1700,
-          height: 1080
-      });
+      browser.windowHandleFullscreen();
     });
 
   // afterAll(function() {

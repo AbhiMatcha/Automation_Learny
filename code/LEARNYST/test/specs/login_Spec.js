@@ -26,10 +26,7 @@ afterAll(function() {
 beforeAll(function(){
   LoginPage.Login.open('login');
   // browser.url('http://learnnew.learnyst.com/learn/My-First-Course?');
-  browser.setViewportSize({
-    width: 1700,
-    height: 1080
-  });60
+  browser.windowHandleFullscreen();
 });
 
 it('-----> should be logged-in by user',function() {

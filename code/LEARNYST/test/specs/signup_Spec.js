@@ -27,20 +27,12 @@ function signup(username,pass)
 
     beforeAll(function(){
 		SignupPage.open('signup');
-		browser.setViewportSize({
-        	width: 1600,
-       		 height: 1080
-      	});
+		browser.windowHandleFullscreen();
 	});
 
 	// afterAll(function() {
  //  	browser.close()
  //  	});
-
-      	
-		
-	
-
 	it('-----> should be signed-up by user and confirm alert is displayed',function() {
 		SignupPage.Signup.Signup_email.setValue(username);
 		SignupPage.Signup.Signup_Password.setValue(pass);

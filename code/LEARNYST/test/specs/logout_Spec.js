@@ -29,10 +29,7 @@ function logout(userName,pass)
 
   beforeAll(function() {
     LogoutPage.open('learn');
-    browser.setViewportSize({
-      width: 1600,
-      height: 1200
-      }); 
+    browser.windowHandleFullscreen();
     LogoutPage.Logout.login_signupFlow.click();
     LoginCom.login_email.setValue(userName);
     LoginCom.login_Password.setValue(pass);

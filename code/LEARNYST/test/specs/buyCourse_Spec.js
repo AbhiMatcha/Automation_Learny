@@ -18,10 +18,7 @@ function enrollCourse(contact)
 {	
     beforeAll(function(){
       buycoursePage.buycourse.open('learn/My-First-Course?');
-      browser.setViewportSize({
-          width: 1700,
-          height: 1080
-      });
+      browser.windowHandleFullscreen();
     });
 
   beforeEach(function() {

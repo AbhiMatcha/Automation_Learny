@@ -1,5 +1,5 @@
 var startCoursePage = require('../pages/startCourse_Page');
-var LoginPage = require('../pages/login_Page');
+// var LoginPage = require('../pages/login_Page');
 var global=require('./Global_data');
 var timerCallback;
 /* 
@@ -28,15 +28,12 @@ function StartCourse(username,password,contact)
 
 	beforeAll(function(){
 		startCoursePage.open('learn/My-First-Course');
-		browser.setViewportSize({
-			width: 1600,
-			height: 1200
-		});
+		browser.windowHandleFullscreen();
 		console.log(global.TestData.CONTACT);
 		startCoursePage.startcourse.buyNow.click();
 		startCoursePage.startcourse.Signup_StartCourse.waitForExist(5000);
 		startCoursePage.startcourse.Signup_StartCourse.click();
-		 startCoursePage.startcourse.SignupEmail.waitForExist(5000);
+		startCoursePage.startcourse.SignupEmail.waitForExist(5000);
 		startCoursePage.startcourse.SignupEmail.setValue(username);
 		startCoursePage.startcourse.SignupPassword.setValue(password);
 		startCoursePage.startcourse.doSignup.waitForExist(5000);

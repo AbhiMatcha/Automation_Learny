@@ -15,7 +15,7 @@ exports.config = {
         // './test/specs/**/*.js'
         // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
         
-        './test/specs/startCourse_Spec.js'
+        './test/specs/discussion_Spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -49,7 +49,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
+        browserName: 'Chrome',
         chromeOptions: {
                 args: [
                     '--disable-gpu',

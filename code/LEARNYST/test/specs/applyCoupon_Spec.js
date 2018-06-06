@@ -19,10 +19,7 @@ function applySmartCoupon(smartCoupon)
 {	
     beforeAll(function(){
       applyCouponPage.applycoupon.open('signup');
-      browser.setViewportSize({
-          width: 1700,
-          height: 1080
-      });
+      browser.windowHandleFullscreen();
     });
 
   beforeEach(function() {
