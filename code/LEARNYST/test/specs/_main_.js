@@ -1,32 +1,28 @@
 'use strict';
-
+/* 
+Suite for classroom (automation)
+*/
 var loginSpec = require('./login_Spec');
 var logoutSpec = require('./logout_Spec');
 var signupSpec = require('./signup_Spec');
-
+var global = require('./Global_data');
 /* 
-Run all the functions and complete test sceanrio,
-Scenario: 1. Run signup fucntion
-		  2. Run Logout function
-		  3. Run Login Function
+check Login, Logout, Signup module
 */
 describe(" -- Testing signup Page -- ", function() {
- it('-----> user should be signed-up by user',function() {
-     signupSpec();
-   });
+    loginSpec(global.sup.username,global.sup.password);
+    global.TestData.pause();
+    logoutSpec(global.sup.username,global.sup.password);
+    global.TestData.pause();
+    signupSpec(global.forenroll.Random_email.value(),global.forenroll.password);
+    global.TestData.pause();
+    logoutSpec(global.sup.username,global.sup.password);
+    global.TestData.pause();
+   // });
 });
-
-describe(" -- Testing login Page -- ", function() {
- it('-----> user should be logged-in by user',function() {
-     loginSpec();
-   });
-});
-
-describe(" -- Testing logout Page -- ", function() {
- it('-----> user should be logged-out by user',function() {
-     logoutSpec();
-   });
-});
+/* 
+ Buy course
+*/
 
 
 
