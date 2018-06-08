@@ -5,7 +5,7 @@ var Signup = Object.create(page,{
    
    Signup_email :{ get:  function()  { return browser.element('#learnystSignup_new_user_user_email');}},
    Signup_Password :{ get:  function()  { return  browser.element('#learnystSignup_new_user_user_password');}},
-   open: { value: function()  { page.open.call(this, 'login');}},
+   open: { value: function()  { page.open.call(this, 'signup');}},
    //Resend_email_Boolean: { get: function() {return browser.isExisting('#resendEmail');}},
    Resend_email :{ get: function() {  return browser.element('#resendEmail');}},
    Signup_forFree: { get: function() { return browser.element('#lr_signup_btn');}},

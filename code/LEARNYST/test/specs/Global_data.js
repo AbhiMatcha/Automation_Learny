@@ -5,7 +5,7 @@
 	TestData:{
 		IMPLICIT_WAIT_TIME: 15000,
 	  LONG_WAIT_TIME: 30000,
-	  PAUSE_WAIT_TIME: 10000,
+	  PAUSE_WAIT_TIME: 2000,
 		LONG_PAUSE_WAIT_TIME: 10000,
 		COURSE_TITLE: 'IdealCourse',
 		BUNDLE_TITLE: 'IdealBundle',
@@ -22,7 +22,7 @@
 		MOCKTEST_ID: 8912,
 		SUP_USER_MODE:1,
   	ENROLLED_USER_MODE:2,
-    CONTACT:987654321,
+    CONTACT:'+919876543121',
     COUPON:'fifty',
   	PAID_USER_MODE:3,
   	COURSE:1,
@@ -53,6 +53,18 @@
     },
     password:'abhi1234'
   },
+
+  randomBank:{
+    bank: { 
+       value: function(){
+        var selectBank = [ "ICIC","SBIN" ];
+        var randomNumber = Math.floor(Math.random()*selectBank.length);
+        return selectBank[randomNumber];
+      }
+    },
+    password:'abhi1234'
+  },
+
   enrolled:{
   	username:'abhishek.matcha@gmail.com',
     password:'abhi1234'

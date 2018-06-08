@@ -6,7 +6,8 @@ var support = Object.create(component, {
     supportTab:{get: function() { return browser.element('#nav-support');}}, 
     subject: {get: function() { return browser.element('#title');}},
     description: {get: function() { return browser.element('#description');}},
-    checkbox: {get: function() { return browser.element('#description');}},
-    // incomplete, we need to have id for checkbox
+    checkbox: {get: function() { return browser.element('#viewedhelp');}},
+    submitTicket: {get: function() { return browser.element('#submit-ticket');}},
+    submitConfirmation: {get: function() { return browser.element('.swal2-confirm');}}
 });
 module.exports = support;

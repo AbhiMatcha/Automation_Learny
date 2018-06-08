@@ -1,6 +1,7 @@
 'use strict';
 var buycoursePage = require('../pages/buyCourse_Page');
 var global = require('./Global_data');
+var profileCom= require('../Components/profile_Com');
 var timerCallback;
 /* 
 Calling the signup function from signup_spec,
@@ -19,8 +20,58 @@ function enrollCourse(contact,username,password)
   // describe(" -- Testing Course Page -- ", function() {
     beforeAll(function(){
       browser.windowHandleFullscreen();
-      //buycoursePage.buycourse.open('learn/My-First-Course?');
       browser.url('http://learnnew.learnyst.com/learn/My-First-Course');
+      buycoursePage.buycourse.login_forBuyCourse.waitForExist(5000);
+      buycoursePage.buycourse.login_forBuyCourse.click();
+      buycoursePage.buycourse.signup_forBuyCourse.waitForExist(5000);
+      buycoursePage.buycourse.signup_forBuyCourse.click();
+      buycoursePage.buycourse.signupEmail_forBuyCourse.waitForExist(5000);
+      buycoursePage.buycourse.signupEmail_forBuyCourse.setValue(username);
+      buycoursePage.buycourse.signupPassword_forBuyCourse.waitForExist(5000);
+      buycoursePage.buycourse.signupPassword_forBuyCourse.setValue(password);
+      buycoursePage.buycourse.signupForFree_forBuyCourse.waitForExist(5000);
+      buycoursePage.buycourse.signupForFree_forBuyCourse.click();
+      buycoursePage.buycourse.selectProfile.waitForExist(6000);
+      buycoursePage.buycourse.selectProfile.click();
+      buycoursePage.buycourse.settings.waitForExist(5000);
+      buycoursePage.buycourse.settings.click();
+      buycoursePage.buycourse.mobileNumber.waitForExist(5000);
+      buycoursePage.buycourse.mobileNumber.setValue(contact);
+      buycoursePage.buycourse.saveSettings.waitForExist(5000);
+      buycoursePage.buycourse.saveSettings.click();
+      global.TestData.pause();
+      browser.back();
+      buycoursePage.buycourse.buyNow.waitForExist(5000);
+      buycoursePage.buycourse.buyNow.click();
+      buycoursePage.buycourse.paySecurely.waitForExist(5000);
+      buycoursePage.buycourse.paySecurely.click();
+      browser.waitForExist('iframe.razorpay-checkout-frame');
+      var my_frame = $('iframe.razorpay-checkout-frame').value;
+      browser.frame(my_frame); 
+      buycoursePage.buycourse.selectPaymentType.waitForExist(2000);
+      buycoursePage.buycourse.selectPaymentType.click();
+      buycoursePage.buycourse.selectBank.selectByValue(global.randomBank.bank.value());
+      buycoursePage.buycourse.payNow.waitForExist(5000);
+      buycoursePage.buycourse.payNow.click();
+      buycoursePage.buycourse.paymentSuccess.waitForExist(5000);
+      buycoursePage.buycourse.paymentSuccess.click(); 
+      console.log(buycoursePage.buycourse.paymentSuccess.isVisible());
+      
+      buycoursePage.buycourse.startCourse.click();
+       /* until here code works*/
+
+      // var paymentRedirection = $('.link');
+      // paymentRedirection.waitForExist(3000);
+      // console.log(paymentRedirection.getText('option:checked'));
+      // paymentRedirection.selectByVisibleText('Go to payment').click();
+      
+
+      // var curTabId = browser.getCurrentTabId();
+      // console.log(curTabId);
+      // browser.switchTab();
+      // curTabId = browser.getCurrentTabId();
+      // console.log(curTabId); 
+
     });
 
   beforeEach(function() {
@@ -31,36 +82,8 @@ function enrollCourse(contact,username,password)
         },60);
     }); 
 
-  // afterAll(function() {
-  // browser.close()
-  // });
-  
   it('-----> course should be enrolled by user',function() {
-      buycoursePage.buycourse.buyNow.waitForExist(5000);
-      buycoursePage.buycourse.buyNow.click();
-      buycoursePage.buycourse.signup_forBuyCourse.waitForExist(5000);
-      buycoursePage.buycourse.signup_forBuyCourse.click();
-      buycoursePage.buycourse.signupEmail_forBuyCourse.waitForExist(5000);
-      buycoursePage.buycourse.signupEmail_forBuyCourse.setValue(username);
-      buycoursePage.buycourse.signupPassword_forBuyCourse.waitForExist(5000);
-      buycoursePage.buycourse.signupPassword_forBuyCourse.setValue(password);
-      buycoursePage.buycourse.signupForFree_forBuyCourse.waitForExist(5000);
-      buycoursePage.buycourse.signupForFree_forBuyCourse.click();
-      //browser.selectByValue(buycoursePage.buycourse.selectCountry,'{"key":"DZ","value":"Algeria"}');
-      buycoursePage.buycourse.selectCountry.click();
-      buycoursePage.buycourse.paySecurely.click();
-      buycoursePage.buycourse.enterContact.setValue(contact);
-      buycoursePage.buycourse.selectPaymentType.click();
-      buycoursePage.buycourse.selectICICI.click();
-      buycoursePage.buycourse.payNow.click();
-      expect(buycoursePage.buycourse.paymentSuccess.isVisible()).toBe(true);
-      expect(buycoursePage.buycourse.paymentFailure.isVisible()).toBe(true);
-      buycoursePage.buycourse.paymentSuccess.click();
-      expect(buycoursePage.buycourse.startCourse.isVisible()).toBe(true);
-      buycoursePage.buycourse.startCourse.click();
-      console.log('yeah clicked course');
       expect(buycoursePage.buycourse.VerifyPurchase.isVisible()).toBe(true);
-      console.log("Test Case: Able to buy the course and start the course");
    });
   
   // });
