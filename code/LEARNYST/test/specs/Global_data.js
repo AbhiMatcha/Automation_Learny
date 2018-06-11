@@ -5,7 +5,8 @@
 	TestData:{
 		IMPLICIT_WAIT_TIME: 15000,
 	  LONG_WAIT_TIME: 30000,
-	  PAUSE_WAIT_TIME: 2000,
+    SHORT_WAIT_TIME:1000,
+	  PAUSE_WAIT_TIME: 5000,
 		LONG_PAUSE_WAIT_TIME: 10000,
 		COURSE_TITLE: 'IdealCourse',
 		BUNDLE_TITLE: 'IdealBundle',
@@ -31,6 +32,7 @@
     PASSWORD:'learnyst',
   	DASHBOARD_URL:"http://learnnew.learnyst.com/learn",
 		MOCKTEST_URL: "http://learnnew.learnyst.com/learn/MockTest--1",
+    shortPause:function(){ return browser.pause(Learnyst.TestData.SHORT_WAIT_TIME);},
 		pause: function(){ return browser.pause(Learnyst.TestData.PAUSE_WAIT_TIME);},
 		longPause: function(){ return browser.pause(Learnyst.TestData.LONG_PAUSE_WAIT_TIME);},
 		pageload:function(){ return browser.timeouts('page load',Learnyst.TestData.IMPLICIT_WAIT_TIME);}

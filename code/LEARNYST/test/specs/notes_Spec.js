@@ -17,20 +17,17 @@ function notesFunction(username,password){
  	  jasmine.clock().install();
  	  setTimeout(function() {
  	  timerCallback();
-    },60);
+    },);
   }); 
 
-	afterAll(function() {
-	  browser.close()
- 	 });
+	// afterAll(function() {
+	//   browser.close()
+ // 	 });
 
 	beforeAll(function(){
- 		 browser.windowHandleFullscreen();
-  	 	 notes_page.notes.open('learn/Learn?'); 
-});
-
-it('-----> should be complete test-in by user',function() {
-	  notes_page.notes.enrollFree.click();
+	  browser.windowHandleFullscreen();
+ 	  notes_page.notes.open('learn/Learn?'); 
+ 	  notes_page.notes.enrollFree.click();
 	  notes_page.notes.Signup_forNotes.waitForExist(5000);
 	  notes_page.notes.Signup_forNotes.click();
 	  notes_page.notes.Signup_Email.waitForExist(5000);
@@ -47,9 +44,13 @@ it('-----> should be complete test-in by user',function() {
 	  browser.clearElement(notes_page.notes.enterNote);
 	  notes_page.notes.enterNote.setValue("HI this is my second notes");
 	  notes_page.notes.submitnote.click();
+});
+	it('-----> should be complete test-in by user',function() {
+	 
 	  expect('.notesText').to.have.text('HI this is my second notes');
-
 	});
+
+
  
 }
 

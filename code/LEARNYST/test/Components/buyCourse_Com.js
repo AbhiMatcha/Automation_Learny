@@ -6,6 +6,8 @@ var buycourse = Object.create(component, {
     selectCourse:{get:  function()  { return browser.element('#20744');}},
     coursePrice:{get: function() { return browser.element('.course-price-val'); }},
     open: { value: function()  { page.open.call(this, 'learn/My-First-Course?');}},
+    enterCoupon:{get: function() { return browser.element('#coupon-input'); }},
+    applyCoupon:{get: function() { return browser.element('#js-apply-coupon'); }},
     buyNow:{get: function() { return browser.element('.buyCourse'); }},
     login_forBuyCourse:{get: function() { return browser.element('#nav-sign-up'); }}, 
     signup_forBuyCourse:{get: function() { return browser.element('[data-link="signup"]'); }}, 
@@ -25,6 +27,6 @@ var buycourse = Object.create(component, {
     settings: {get:  function()  { return browser.element('#settings');}},
     mobileNumber: {get:  function()  { return browser.element('#mobileNumber');}}, 
     saveSettings: {get:  function()  { return browser.element('#js-setting-submit');}}, 
+    submit: { value: function() { this.form.submitForm(); } },
 });
 module.exports = buycourse;
-

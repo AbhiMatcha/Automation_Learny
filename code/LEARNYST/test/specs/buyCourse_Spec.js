@@ -12,10 +12,10 @@ Scenario: 1. User should be signed-in through sign-up flow.
 */
 
 describe(" -- Testing Course Page -- ", function() {
-    enrollCourse(global.TestData.CONTACT,global.forenroll.Random_email.value(),global.forenroll.password);
+    enrollCourse(global.TestData.CONTACT,global.forenroll.Random_email.value(),global.forenroll.password,global.TestData.COUPON);
 });
 
-function enrollCourse(contact,username,password)
+function enrollCourse(contact,username,password,coupon)
 {	
   // describe(" -- Testing Course Page -- ", function() {
     beforeAll(function(){
@@ -39,20 +39,29 @@ function enrollCourse(contact,username,password)
       buycoursePage.buycourse.mobileNumber.setValue(contact);
       buycoursePage.buycourse.saveSettings.waitForExist(5000);
       buycoursePage.buycourse.saveSettings.click();
-      global.TestData.pause();
+      global.TestData.pause(); 
       browser.back();
-      buycoursePage.buycourse.buyNow.waitForExist(5000);
+      buycoursePage.buycourse.enterCoupon.waitForExist(3000);
+      buycoursePage.buycourse.enterCoupon.setValue(coupon);
+      buycoursePage.buycourse.applyCoupon.waitForExist(3000);
+      buycoursePage.buycourse.applyCoupon.click();     
+      buycoursePage.buycourse.buyNow.waitForExist(3000);
       buycoursePage.buycourse.buyNow.click();
-      buycoursePage.buycourse.paySecurely.waitForExist(5000);
+      buycoursePage.buycourse.paySecurely.waitForExist(2000);
       buycoursePage.buycourse.paySecurely.click();
       browser.waitForExist('iframe.razorpay-checkout-frame');
       var my_frame = $('iframe.razorpay-checkout-frame').value;
       browser.frame(my_frame); 
-      buycoursePage.buycourse.selectPaymentType.waitForExist(2000);
+      buycoursePage.buycourse.selectPaymentType.waitForExist(1000);
       buycoursePage.buycourse.selectPaymentType.click();
       buycoursePage.buycourse.selectBank.selectByValue(global.randomBank.bank.value());
       buycoursePage.buycourse.payNow.waitForExist(5000);
       buycoursePage.buycourse.payNow.click();
+      // buycoursePage.buycourse.paymentSuccess.waitForExist(5000);
+
+      buycoursePage.buycourse.paymentSuccess.waitForExist(5000);
+      console.log(buycoursePage.buycourse.paymentSuccess.hasFocus());
+      buycoursePage.buycourse.submit();
       buycoursePage.buycourse.paymentSuccess.waitForExist(5000);
       buycoursePage.buycourse.paymentSuccess.click(); 
       console.log(buycoursePage.buycourse.paymentSuccess.isVisible());
