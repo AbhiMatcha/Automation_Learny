@@ -7,10 +7,10 @@ Calling the login function from Login_spec,
 Scenario: User should be logged-in through sign-up flow.      
 */
 describe(" -- Testing free test Page -- ", function() {
-  suportFunction(global.forenroll.Random_email.value(),global.forenroll.password);
+  suportFunction(global.forenroll.Random_email.value(),global.forenroll.password,global.support.title,global.support.description);
   });
 
-function suportFunction(username,password){
+function suportFunction(username,password,title,description){
 
 	beforeEach(function() {
 	  timerCallback = jasmine.createSpy("timerCallback");
@@ -19,7 +19,6 @@ function suportFunction(username,password){
  	  timerCallback();
     },);
   }); 
-
 	beforeAll(function(){
  	  browser.windowHandleFullscreen();
       support_page.support.open('learn/Learn?'); 
@@ -35,9 +34,9 @@ function suportFunction(username,password){
 	  support_page.support.supportTab.waitForExist(6000);
 	  support_page.support.supportTab.click();
 	  support_page.support.subject.waitForExist(3000);
-	  support_page.support.subject.setValue("HI this is my notes subject");
+	  support_page.support.subject.setValue(title);
 	  support_page.support.description.waitForExist(3000);
-	  support_page.support.description.setValue("HI this is my notes");
+	  support_page.support.description.setValue(description);
 	  support_page.support.checkbox.waitForExist(3000);
 	  support_page.support.checkbox.click();
 	  support_page.support.submitTicket.waitForExist(3000);

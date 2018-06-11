@@ -71,6 +71,10 @@
   	username:'abhishek.matcha@gmail.com',
     password:'abhi1234'
   },
+  support:{
+    title:'this is my title',
+    description:'this is my description and its for testing'
+  },
   paid:{
   	username:'Testing.Paiduser@gmail.com',
   	password:'learnyst'
