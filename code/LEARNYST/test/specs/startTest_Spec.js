@@ -32,13 +32,12 @@ function takeFreeTest(username,password){
 		startFreeTestPage.startFreeTest.SignupPassword.setValue(password);
 		startFreeTestPage.startFreeTest.doSignup.waitForExist(5000);
 		startFreeTestPage.startFreeTest.doSignup.click();
-		startFreeTestPage.startFreeTest.takeTest.waitForExist(5000);
+		startFreeTestPage.startFreeTest.takeTest.waitForExist(4000);
 		startFreeTestPage.startFreeTest.takeTest.click();
-		startFreeTestPage.startFreeTest.startTest.waitForExist(5000);
+		startFreeTestPage.startFreeTest.startTest.waitForExist(3000);
 		startFreeTestPage.startFreeTest.startTest.click();
 		startFreeTestPage.startFreeTest.wrongAnswer.waitForExist(5000);
 		startFreeTestPage.startFreeTest.wrongAnswer.click();
-		console.log(startFreeTestPage.startFreeTest.wrongAnswer);
 		startFreeTestPage.startFreeTest.saveAnswer.click();
 		startFreeTestPage.startFreeTest.nextQuestion.click();
 		startFreeTestPage.startFreeTest.submitTest.click();
@@ -54,8 +53,9 @@ function takeFreeTest(username,password){
 		// startFreeTestPage.startFreeTest.nextQuestion.click();
 		// startFreeTestPage.startFreeTest.submitTest.click();
 		/* This is taking retest from the test completion page*/
-		global.TestData.pause();
-		console.log(startFreeTestPage.startFreeTest.retakeTest);
+		// global.TestData.pause();
+		startFreeTestPage.startFreeTest.retakeTest.waitForVisible(5000);
+		// console.log(startFreeTestPage.startFreeTest.retakeTest);
 		startFreeTestPage.startFreeTest.retakeTest.click();
 		console.log(startFreeTestPage.startFreeTest.correctAnswer);
 		startFreeTestPage.startFreeTest.correctAnswer.click();

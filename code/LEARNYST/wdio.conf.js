@@ -15,7 +15,7 @@ exports.config = {
         // './test/specs/**/*.js'
         // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
         
-        './test/specs/startTest_Spec.js'
+        './test/specs/support_Spec.js'
     ],
     // Patterns to exclude.
     exclude: [

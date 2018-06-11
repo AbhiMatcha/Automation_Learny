@@ -38,7 +38,8 @@ it('-----> should be complete test-in by user',function() {
 	  discussion_page.discussion.SignupPassword.setValue(password);
 	  discussion_page.discussion.doSignup.waitForExist(5000);
 	  discussion_page.discussion.doSignup.click();
-	  discussion_page.discussion.discussiontab.waitForExist(2000);
+	  discussion_page.discussion.discussiontab.waitForExist(5000);
+	  console.log(discussion_page.discussion.discussiontab);
 	  discussion_page.discussion.discussiontab.click();
 	  discussion_page.discussion.ask.click();
 	  discussion_page.discussion.enterQuestion.setValue("HI this is my question");

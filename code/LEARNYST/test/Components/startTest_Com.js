@@ -24,7 +24,7 @@ var startFreeTest = Object.create(component, {
     explanation:{get: function() { return browser.getText('#quizExplanId');}},
     // explanation:{get: function() { return browser.element('#quizExplanId');}},
     nextAnswer:{get: function() { return browser.element('#nextAnswer');}},
-    lastQuestionPopup:{get: function() { return browser.element('.swal2-confirm');}},  
+    lastQuestionPopup:{get: function() { return browser.element('.swal2-confirm');}},   
 });
 module.exports = startFreeTest;
 

@@ -28,5 +28,11 @@ var buycourse = Object.create(component, {
     mobileNumber: {get:  function()  { return browser.element('#mobileNumber');}}, 
     saveSettings: {get:  function()  { return browser.element('#js-setting-submit');}}, 
     submit: { value: function() { this.form.submitForm(); } },
+    resumeCourse: { get: function() { return browser.element('.js-resume'); }},
+    verifyLesson1:{ get: function() { return browser.element('.lSliderPlayer');}},
+    selectLesson2:{ get: function() { return browser.element('.theme-col');}},
+    verifyLesson2:{ get: function() { return browser.element('.img-responsive');}},
+    verifyNavigation:{ get: function() { return browser.element('.line-letter-space');}},
+    
 });
 module.exports = buycourse;

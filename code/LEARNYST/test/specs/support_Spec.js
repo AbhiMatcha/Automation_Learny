@@ -17,38 +17,39 @@ function suportFunction(username,password){
  	  jasmine.clock().install();
  	  setTimeout(function() {
  	  timerCallback();
-    },60);
+    },);
   }); 
 
-	afterAll(function() {
-	  browser.close()
- 	 });
-
 	beforeAll(function(){
- 		 browser.windowHandleFullscreen();
-  	 	 notes_page.notes.open('learn/Learn?'); 
-});
+ 	  browser.windowHandleFullscreen();
+      support_page.support.open('learn/Learn?'); 
+  	  support_page.support.Login_signupFlow.waitForExist(5000);
+  	  support_page.support.Login_signupFlow.click();
+	  support_page.support.Signup_support.waitForExist(5000);
+	  support_page.support.Signup_support.click();
+	  support_page.support.Signup_email.waitForExist(5000);
+	  support_page.support.Signup_email.setValue(username);
+	  support_page.support.Signup_Password.setValue(password);
+	  support_page.support.do_Signup.waitForExist(5000);
+	  support_page.support.do_Signup.click();
+	  support_page.support.supportTab.waitForExist(6000);
+	  support_page.support.supportTab.click();
+	  support_page.support.subject.waitForExist(3000);
+	  support_page.support.subject.setValue("HI this is my notes subject");
+	  support_page.support.description.waitForExist(3000);
+	  support_page.support.description.setValue("HI this is my notes");
+	  support_page.support.checkbox.waitForExist(3000);
+	  support_page.support.checkbox.click();
+	  support_page.support.submitTicket.waitForExist(3000);
+	  support_page.support.submitTicket.click();
+	  support_page.support.submitConfirmation.waitForExist(3000);
+	  support_page.support.submitConfirmation.click();
+	  support_page.support.Signup_support.waitForExist(3000);
+	  });
 
-it('-----> should be complete test-in by user',function() {
-	  support_page.support.enrollFree.click();
-	  support_page.notes.Signup_forNotes.waitForExist(5000);
-	  support_page.notes.Signup_forNotes.click();
-	  support_page.notes.Signup_Email.waitForExist(5000);
-	  support_page.notes.Signup_Email.setValue(username);
-	  support_page.notes.Signup_Password.setValue(password);
-	  support_page.notes.do_Signup.waitForExist(5000);
-	  support_page.notes.do_Signup.click();
-	  support_page.notes.notesTab.waitForExist(6000);
-	  support_page.notes.notesTab.click();
-	  support_page.notes.createNotes.click();
-	  support_page.notes.enterNote.setValue("HI this is my first notes");
-	  support_page.notes.submitnote.click();
-	  support_page.notes.editNote.click();
-	  browser.clearElement(notes_page.notes.enterNote);
-	  notes_page.notes.enterNote.setValue("HI this is my second notes");
-	  notes_page.notes.submitnote.click();
-	  expect('.notesText').to.have.text('HI this is my second notes');
-
+	it('-----> should be complete test-in by user',function() {
+		expect(support_page.support.submitConfirmation.isVisible()).toBe(true);
+	  
 	});
  
 }
