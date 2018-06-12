@@ -21,7 +21,7 @@ var buycourse = Object.create(component, {
     payNow:{get: function() { return browser.element('.otp-btn'); }},
     paymentSuccess:{get: function() { return browser.element('.success'); }},
     paymentFailure:{get: function() { return browser.element('.danger'); }},
-    startCourse:{get: function() { return browser.element('.gotoPaidCourse'); }},
+    startCourse:{get: function() { return browser.element('.lr-btn-template.lr-btn-primary.gotoPaidCourse'); }}, 
     VerifyPurchase:{ get: function() { return browser.element('.course-purchased');}},
     selectProfile:{get:  function()  { return browser.element('.dropdown-toggle');}},
     settings: {get:  function()  { return browser.element('#settings');}},
