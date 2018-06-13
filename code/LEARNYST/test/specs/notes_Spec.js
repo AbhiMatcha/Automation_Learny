@@ -7,10 +7,10 @@ Calling the login function from Login_spec,
 Scenario: User should be logged-in through sign-up flow.      
 */
 describe(" -- Testing free test Page -- ", function() {
-  notesFunction(global.forenroll.Random_email.value(),global.forenroll.password);
+  notesFunction(global.forenroll.Random_email.value(),global.forenroll.password,global.notes.fisrtNote,global.notes.editedNote);
   });
 
-function notesFunction(username,password){
+function notesFunction(username,password,notes,editedNotes){
 
 	beforeEach(function() {
 	  timerCallback = jasmine.createSpy("timerCallback");
@@ -19,10 +19,6 @@ function notesFunction(username,password){
  	  timerCallback();
     },);
   }); 
-
-	// afterAll(function() {
-	//   browser.close()
- // 	 });
 
 	beforeAll(function(){
 	  browser.windowHandleFullscreen();
@@ -35,18 +31,23 @@ function notesFunction(username,password){
 	  notes_page.notes.Signup_Password.setValue(password);
 	  notes_page.notes.do_Signup.waitForExist(5000);
 	  notes_page.notes.do_Signup.click();
-	  notes_page.notes.notesTab.waitForExist(6000);
+	  notes_page.notes.notesTab.waitForExist(5000);
 	  notes_page.notes.notesTab.click();
+	  notes_page.notes.createNotes.waitForExist(5000);
 	  notes_page.notes.createNotes.click();
-	  notes_page.notes.enterNote.setValue("HI this is my first notes");
+	  notes_page.notes.enterNote.waitForExist(5000);
+	  notes_page.notes.enterNote.setValue(notes);
+	  notes_page.notes.submitnote.waitForExist(5000);
 	  notes_page.notes.submitnote.click();
+	  notes_page.notes.editNote.waitForExist(5000);
 	  notes_page.notes.editNote.click();
-	  browser.clearElement(notes_page.notes.enterNote);
-	  notes_page.notes.enterNote.setValue("HI this is my second notes");
+	  notes_page.notes.enterNote.waitForExist(5000);
+	  browser.elementIdClear(notes_page.notes.enterNote);
+	  notes_page.notes.enterNote.setValue(editedNotes);
 	  notes_page.notes.submitnote.click();
+	  
 });
 	it('-----> should be complete test-in by user',function() {
-	 
 	  expect('.notesText').to.have.text('HI this is my second notes');
 	});
 

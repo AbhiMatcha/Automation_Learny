@@ -37,6 +37,15 @@
 		longPause: function(){ return browser.pause(Learnyst.TestData.LONG_PAUSE_WAIT_TIME);},
 		pageload:function(){ return browser.timeouts('page load',Learnyst.TestData.IMPLICIT_WAIT_TIME);}
 	},
+  discussion:{
+    question:'hi this is my question',
+    editedQuestion:'this is my edited question'
+  },
+  notes:{
+    fisrtNote:'hi this is my question',
+    editedNote:'this is my edited question'
+  },
+
 	sup:{
     username:'abhishek.matcha@learnyst.com',
     password:'abhi1234'

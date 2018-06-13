@@ -72,25 +72,17 @@ function enrollCourse(contact,username,password,coupon)
       browser.switchTab(tabID[1]);
       buycoursePage.buycourse.paymentSuccess.waitForExist(5000);
       buycoursePage.buycourse.paymentSuccess.click();
-      global.TestData.pause(); 
-      var tabID2 = browser.getTabIds();
-      browser.switchTab(tabID2[0]);
-      // browser.back();
-      // buycoursePage.buycourse.startCourse.waitForExist(5000);
-      console.log(buycoursePage.buycourse.startCourse);
-      // browser.close();
+      browser.close();
+      browser.newWindow('learnnew.learnyst.com/learn/My-First-Course', 'WebdriverIO window', 'width=420,height=230,resizable,scrollbars=yes,status=1')
+      /* until here code works*/
       // global.TestData.pause(); 
-      // browser.switchTab(tabID[0]);
-      // console.log(browser.switchTab(tabID[0]));
-      // browser.back();
-      // var getcurrentTab = browser.getCurrentTabId();
-      // console.log(getcurrentTab);
-      // console.log(tabID[0]);
-      // console.log(tabID[1]); 
-      
-      // console.log(getcurrentTab);
+      var tabID2 = browser.getTabIds();
+      console.log(browser.switchTab(tabID2));
+      browser.switchTab(tabID2[0]);
+      console.log(browser.switchTab(tabID2[0]));
+      buycoursePage.buycourse.startCourse.waitForExist(5000);
       buycoursePage.buycourse.startCourse.click();
-       /* until here code works*/
+      console.log(buycoursePage.buycourse.startCourse);
     });
 
     it('-----> course should be enrolled by user',function() {
