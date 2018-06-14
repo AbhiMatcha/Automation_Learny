@@ -13,5 +13,6 @@ var notes = Object.create(component, {
     enterNote:{ get: function() { return browser.element('#postQuestionInput'); }},
     submitnote:{ get: function() { return browser.element('#addPostQuestion'); }},
     editNote:{ get: function() { return browser.element('.editNote'); }},
+    deleteNote:{ get: function() { return browser.element('.pull-left.js-removeNote.removeNote'); }}, 
 });
 module.exports = notes;

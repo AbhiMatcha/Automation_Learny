@@ -41,6 +41,17 @@
     question:'hi this is my question',
     editedQuestion:'this is my edited question'
   },
+
+  TestAnswers:{
+   randomAnswers: { 
+       value: function(){
+        var selectAnswer = [ "one","two","three","four" ];
+        var randomNumber = Math.floor(Math.random()*selectAnswer.length);
+        return selectAnswer[randomNumber];
+      },
+    },
+  },
+
   notes:{
     fisrtNote:'hi this is my question',
     editedNote:'this is my edited question'

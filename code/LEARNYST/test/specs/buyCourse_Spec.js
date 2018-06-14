@@ -67,22 +67,20 @@ function enrollCourse(contact,username,password,coupon)
       global.TestData.pause(); 
       var tabID = browser.getTabIds();
       console.log(tabID);
-      console.log(tabID[0]);
-      console.log(tabID[1]); 
       browser.switchTab(tabID[1]);
+      console.log(browser.getCurrentTabId());
       buycoursePage.buycourse.paymentSuccess.waitForExist(5000);
       buycoursePage.buycourse.paymentSuccess.click();
-      browser.close();
-      browser.newWindow('learnnew.learnyst.com/learn/My-First-Course', 'WebdriverIO window', 'width=420,height=230,resizable,scrollbars=yes,status=1')
       /* until here code works*/
       // global.TestData.pause(); 
-      var tabID2 = browser.getTabIds();
-      console.log(browser.switchTab(tabID2));
-      browser.switchTab(tabID2[0]);
-      console.log(browser.switchTab(tabID2[0]));
-      buycoursePage.buycourse.startCourse.waitForExist(5000);
-      buycoursePage.buycourse.startCourse.click();
-      console.log(buycoursePage.buycourse.startCourse);
+      // global.TestData.shortPause();
+      // var tabID2 = browser.getTabIds();
+      // console.log(tabID2); 
+      // browser.switchTab(tabID2[0]);
+      // console.log(browser.getCurrentTabId());
+      // global.TestData.pause();
+      // buycoursePage.buycourse.startCourse.click();
+      // console.log(buycoursePage.buycourse.startCourse);
     });
 
     it('-----> course should be enrolled by user',function() {
@@ -92,8 +90,4 @@ function enrollCourse(contact,username,password,coupon)
 }
 
 module.exports= enrollCourse;
-
-
-
-
 
