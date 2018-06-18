@@ -49,20 +49,30 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'Chrome',
-        chromeOptions: {
-                args: [
-                    '--disable-gpu',
-                    '--disable-impl-side-painting',
-                    '--disable-gpu-sandbox',
-                    '--disable-accelerated-2d-canvas',
-                    '--disable-accelerated-jpeg-decoding',
-                    '--no-sandbox',
-                    '--test-type=ui',
-                    ],
-            },
+        browserName: 'phantomjs', //phantomjs || Chrome
+        // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
+        // browserName: 'phantomjs',
+        // chromeOptions: {
+        //         args: [
+        //             '--disable-gpu',
+        //             '--disable-impl-side-painting',
+        //             '--disable-gpu-sandbox',
+        //             '--disable-accelerated-2d-canvas',
+        //             '--disable-accelerated-jpeg-decoding',
+        //             '--no-sandbox',
+        //             '--test-type=ui',
+        //             ],
+        //     },
     }],
     //
+    // exports.config = {
+    // ...
+    // services: ['selenium-standalone'],
+    // ...
+    // Options are set here as well
+    // seleniumLogs: './logs',
+    //...
+    // };
     // ===================
     // Test Configurations
     // ===================
@@ -156,6 +166,16 @@ exports.config = {
         }
     },
     
+    // exports.config = {
+    // ...
+    reporters: ['dot', 'allure'],
+    reporterOptions: {
+        allure: {
+            outputDir: 'allure-results'
+        }
+    },
+    // ...
+    // }
     //
     // =====
     // Hooks
@@ -279,9 +299,9 @@ exports.config = {
      */
     // onComplete: function(exitCode, config, capabilities) {
     // }
-    // onComplete: function(exitCode) {
-    //     seleniumServer.kill();
+    onComplete: function(exitCode) {
+        seleniumServer.kill();
         
-    // }
+    }
 
 }
