@@ -12,8 +12,8 @@ var profile = Object.create(component, {
     saveSettings: {get:  function()  { return browser.element('#js-setting-submit');}}, 
     profile_Signup_email :{ get:  function()  { return browser.element('#learnystSignup_new_user_user_email');}},
    	profile_Signup_Password :{ get:  function()  { return  browser.element('#learnystSignup_new_user_user_password');}},
-   	profile_Signup_forFree: { get: function() { return browser.element('#lr_signup_btn');}},
-
+   	profile_Signup_forFree: { get: function() { return browser.element('#lr_signup_btn');}}, 
+    VerifyNumberSaved: { get: function() { return browser.element('.alert-success');}},
    
 });
 module.exports = profile;

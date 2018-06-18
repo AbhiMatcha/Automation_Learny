@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529324467673' stop='1529324487688'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529324477677' status='failed' stop='1529324487687'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529324477680' status='failed' stop='1529324487687'>
+                    <name>POST /wd/hub/session/03fda7430f4c82770fbd2dfbd399c4e7/element</name>
+                    <title>POST /wd/hub/session/03fda7430f4c82770fbd2dfbd399c4e7/element</title>
+                    <attachments>
+                        <attachment title='Request' source='81a912e9-ecb8-41e8-948b-35e37a5183ee-attachment.json' type='application/json' size='70'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.</message>
+                <stack-trace>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+                    at &lt;Jasmine>
+                    at ontimeout (timers.js:427:11)
+                    at tryOnTimeout (timers.js:289:5)
+                    at listOnTimeout (timers.js:252:5)
+                    at Timer.processTimers (timers.js:212:10)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

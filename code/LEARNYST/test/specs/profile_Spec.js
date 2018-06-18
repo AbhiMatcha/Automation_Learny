@@ -5,18 +5,16 @@ var timerCallback;
 /* 
 Calling the signup function from signup_spec,
 Scenario: 1. User should be signed-in through sign-up flow. 
-          2. User should buy/enroll the course.
-          3. User should select payment (ICICI) and complete it.
-          4. user should be able to access the course.
+          2. User should be navigated to profile page.
+          3. User should save his/her number.
 */
-
-// describe(" -- save mobile number  -- ", function() {
-//     saveNumber(global.TestData.CONTACT,global.forenroll.Random_email.value(),global.forenroll.password);
-// });
+describe(" -- save mobile number  -- ", function() {
+    saveNumber(global.TestData.CONTACT,global.forenroll.Random_email.value(),global.forenroll.password);
+});
 
 function saveNumber(contact,username,pass){
 
-describe(" -- Testing Logout Page -- ", function() {
+// describe(" -- Testing Logout Page -- ", function() {
   
   beforeEach(function() {
 
@@ -37,28 +35,21 @@ describe(" -- Testing Logout Page -- ", function() {
       profilePage.profile.profile_Signup_Password.setValue(pass);
       profilePage.profile.profile_Signup_forFree.waitForExist(5000);
       profilePage.profile.profile_Signup_forFree.click();
-      profilePage.profile.selectProfile.waitForExist(6000);
+      profilePage.profile.selectProfile.waitForExist(5000);
       profilePage.profile.selectProfile.click();
-
-    });
-
-  it('-----> course should be enrolled by user',function() {
-
-      
       profilePage.profile.settings.waitForExist(5000);
       profilePage.profile.settings.click();
       profilePage.profile.mobileNumber.waitForExist(5000);
       profilePage.profile.mobileNumber.setValue(contact);
       profilePage.profile.saveSettings.waitForExist(5000);
       profilePage.profile.saveSettings.click();
-      browser.back();
-      console.log('-------------- hi -----------------');
-
     });
-  });
+  it('-----> course should be enrolled by user',function() {
+    expect(profilePage.profile.VerifyNumberSaved.isVisible()).toBe(true);
+    });
+  // });
 
 }
-
 module.exports= saveNumber;
 
 

@@ -1,6 +1,7 @@
 'use strict';
-
 var LogoutPage=require('../pages/logout_Page');
+var loginCom=require('../Components/login_Com');
+var profileCom=require('../Components/profile_Com');
 var global=require('./Global_data');
 var timerCallback;
 /* 
@@ -27,20 +28,19 @@ function logout(userName,pass)
     browser.windowHandleFullscreen();
     LogoutPage.Logout.login_signupFlow.waitForExist(4000);
     LogoutPage.Logout.login_signupFlow.click();
-    LogoutPage.Logout.login_email.waitForExist(4000);
-    LogoutPage.Logout.login_email.setValue(userName);
-    LogoutPage.Logout.login_password.waitForExist(4000);
-    LogoutPage.Logout.login_password.setValue(pass);
-    LogoutPage.Logout.LoginButton_signupFlow.waitForExist(4000);
-    LogoutPage.Logout.LoginButton_signupFlow.click();
-    LogoutPage.Logout.User_Profile.waitForExist(5000);
-    LogoutPage.Logout.User_Profile.click();
-    LogoutPage.Logout.Logout_button.waitForExist(5000);
-    LogoutPage.Logout.Logout_button.click();
-    console.log("Logout is successfull ");  
+    loginCom.login_email.waitForExist(5000);
+    loginCom.login_email.setValue(userName);
+    loginCom.login_Password.waitForExist(5000);
+    loginCom.login_Password.setValue(pass);  
+    LogoutPage.Logout.login.waitForExist(5000);
+    LogoutPage.Logout.login.click();
+    profileCom.selectProfile.waitForExist(6000);
+    profileCom.selectProfile.click();
+    profileCom.signout.waitForExist(5000);
+    profileCom.signout.click();
+    LogoutPage.Logout.loggedout_Verify.waitForExist(4000);
   });
   it('-----> should be logged-out by user 1',function() {
-    LogoutPage.Logout.loggedout_Verify.waitForExist(4000);
     expect(LogoutPage.Logout.loggedout_Verify.isVisible()).toBe(true);
      }); 
 });

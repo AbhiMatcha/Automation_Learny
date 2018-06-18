@@ -40,7 +40,6 @@ function signup(username,pass)
 			SignupPage.Signup.Signup_forFree.click();
 			SignupPage.Signup.Resend_email.waitForExist(5000);
 			expect(SignupPage.Signup.Resend_email.isVisible()).toBe(true);
-			console.log('signup success');
 		});	
 	});	
 }

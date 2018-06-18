@@ -2,11 +2,10 @@
 
 var component=require('./component'); 
 
+
 var buycourse = Object.create(component, {
     selectCourse:{get:  function()  { return browser.element('#20744');}},
-    // open: { value: function()  { page.open.call(this, 'learn/My-First-Course?');}}, 
     open: { value: function()  { page.open.call(this, 'learn/My-First-Course?');}},
-    login_forBuyCourse:{get: function() { return browser.element('#nav-sign-up'); }}, 
     signup_forBuyCourse:{get: function() { return browser.element('[data-link="signup"]'); }}, 
     signupEmail_forBuyCourse:{get:  function()  { return browser.element('#signup-email');}},
     signupPassword_forBuyCourse:{get:  function()  { return browser.element('#signup-password');}}, 

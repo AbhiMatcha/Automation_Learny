@@ -1,5 +1,6 @@
 'use strict';
 var buycoursePage = require('../pages/buyCourse_Page');
+var logoutCom=('../Components/logout_Com');
 var global = require('./Global_data');
 var profileCom= require('../Components/profile_Com');
 var timerCallback;
@@ -29,8 +30,8 @@ function enrollCourse(contact,username,password,coupon)
     beforeAll(function(){
       browser.windowHandleFullscreen();
       browser.url('http://learnnew.learnyst.com/learn/My-First-Course');
-      buycoursePage.buycourse.login_forBuyCourse.waitForExist(5000);
-      buycoursePage.buycourse.login_forBuyCourse.click();
+      logoutCom.login_forBuyCourse.waitForExist(5000);
+      logoutCom.login_forBuyCourse.click();
       buycoursePage.buycourse.signup_forBuyCourse.waitForExist(5000);
       buycoursePage.buycourse.signup_forBuyCourse.click();
       buycoursePage.buycourse.signupEmail_forBuyCourse.waitForExist(5000);
