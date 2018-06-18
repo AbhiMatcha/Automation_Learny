@@ -55,71 +55,23 @@ function downLoadCertificate(username,password,contact,answer1,answer2)
 		downloadCertificatePage.DownloadCertificate.next.click();
 		downloadCertificatePage.DownloadCertificate.submit.waitForExist(5000);
 		downloadCertificatePage.DownloadCertificate.submit.click();
-		global.TestData.pause();
+		global.TestData.shortPause();
 		browser.back();
 		browser.back();
-		global.TestData.pause();
 		downloadCertificatePage.DownloadCertificate.certificateTab.waitForExist(5000);
 		downloadCertificatePage.DownloadCertificate.certificateTab.click();
 		downloadCertificatePage.DownloadCertificate.downloadCertificate.waitForExist(5000);
 		downloadCertificatePage.DownloadCertificate.downloadCertificate.click();
-		expect(downloadCertificatePage.DownloadCertificate.submit.isVisible()).toBe(true);
-		// downloadCertificatePage.DownloadCertificate.retakeTest.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.retakeTest.click();
 		
 		
-		// global.TestData.shortPause();
-
-		// var correctAnswer1=$('[for="shipadd5545112"]');
-		// var correctAnswer2=$('[for="shipadd5545296"]');
-		// global.TestData.pause();
-
-		// downloadCertificatePage.DownloadCertificate.correctAnswer1Test1.click();
-		// downloadCertificatePage.DownloadCertificate.correctAnswer1Test1.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.correctAnswer1Test1.click();
-		// downloadCertificatePage.DownloadCertificate.save.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.save.click();
-		// downloadCertificatePage.DownloadCertificate.next.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.next.click();
-		// downloadCertificatePage.DownloadCertificate.correctAnswer2Test1.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.correctAnswer2Test1.click();
-		// downloadCertificatePage.DownloadCertificate.save.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.save.click();
-		// downloadCertificatePage.DownloadCertificate.next.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.next.click();
-		// downloadCertificatePage.DownloadCertificate.submit.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.submit.click();
-
-		// global.TestData.shortPause();	
-		// browser.back();
-		// browser.back();
-		// global.TestData.shortPause();
-		// downloadCertificatePage.DownloadCertificate.resumeButton.waitForExist(5000);
-		// console.log(downloadCertificatePage.DownloadCertificate.resumeButton);
-		// downloadCertificatePage.DownloadCertificate.resumeButton.click();
-		// downloadCertificatePage.DownloadCertificate.takeTest.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.takeTest.click();
-		// downloadCertificatePage.DownloadCertificate.startTest.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.startTest.click();
-		// downloadCertificatePage.DownloadCertificate.answerTest2.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.answerTest2.setValue(answer1);
-		// downloadCertificatePage.DownloadCertificate.save.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.save.click();
-		// downloadCertificatePage.DownloadCertificate.next.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.next.click();
-		// downloadCertificatePage.DownloadCertificate.answerTest2.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.answerTest2.setValue(answer2);
-		// downloadCertificatePage.DownloadCertificate.save.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.save.click();
-		// downloadCertificatePage.DownloadCertificate.next.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.next.click();
-		// downloadCertificatePage.DownloadCertificate.submit.waitForExist(5000);
-		// downloadCertificatePage.DownloadCertificate.submit.click();	
+		
+		
 	}); 
 
 	it('-----> start course',function() 
 	{   
-
+		
+		expect(downloadCertificatePage.DownloadCertificate.submit.isVisible()).toBe(true);
 		console.log('Test case passed : User successfully signed-up and confirm alert is displayed');
 	});
 }
