@@ -12,3 +12,4 @@ var Logout = Object.create(page,{
  });
 
 module.exports = Logout;
+
