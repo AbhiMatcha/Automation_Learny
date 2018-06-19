@@ -1,7 +1,6 @@
 // var selenium = require('seleniumServer-standalone');
 // var seleniumServer;
 exports.config = {
-    
     //
     // ==================
     // Specify Test Files
@@ -14,7 +13,6 @@ exports.config = {
     specs: [
         // './test/specs/**/*.js'
         // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
-        
         './test/specs/_main_.js'
     ],
     // Patterns to exclude.
@@ -173,39 +171,47 @@ exports.config = {
     // ...
     // }
     //
+
      reporters: ['spec', 'dot', 'allure','junit'],
     reporterOptions: {
         allure: {
             outputDir: 'allure-results'
         },
-        junit: {
-            outputDir: './'
-        }
+    //     junit: {
+    //         outputDir: './'
+    //     }
     },
+
     // =====
     // Hooks
     // =====
-    services: ['selenium-standalone','phantomjs'],
-     phantomjsOpts: {
-        webdriverLogfile: 'phantomjsdriver.log',
-        ignoreSslErrors: true
-     },
+
+    // services: ['selenium-standalone','phantomjs'],
+    //  phantomjsOpts: {
+    //     webdriverLogfile: 'phantomjsdriver.log',
+    //     ignoreSslErrors: true
+    //  },
+
     // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
     // it and to build services around it. You can either apply a single function or an array of
     // methods to it. If one of them returns with a promise, WebdriverIO will wait until that promise got
     // resolved to continue.
-     jasmineNodeOpts: {
-        //
-        // Jasmine default timeout
-        defaultTimeoutInterval: (24*60*60*1000),
+
+
+    //  jasmineNodeOpts: {
+    //     //
+    //     // Jasmine default timeout
+    //     defaultTimeoutInterval: (24*60*60*1000),
       
-        // The Jasmine framework allows interception of each assertion in order to log the state of the application
-        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
-        // an assertion fails.
-        expectationResultHandler: function(passed, assertion) {
-            // do something
-        }
-    },
+    //     // The Jasmine framework allows interception of each assertion in order to log the state of the application
+    //     // or website depending on the result. For example, it is pretty handy to take a screenshot every time
+    //     // an assertion fails.
+    //     expectationResultHandler: function(passed, assertion) {
+    //         // do something
+    //     }
+    // },
+
+
     /**
      * Gets executed once before all workers get launched.
      * @param {Object} config wdio configuration object
@@ -220,17 +226,18 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-     onPrepare: function (config, capabilities) {
-     return new Promise((resolve, reject) => {
-        selenium.start((err, process) => {
-         if(err) {
-          return reject(err);
-        }
-        seleniumServer = process;
-        resolve(process);
-      })
-    });
-    },
+
+    //  onPrepare: function (config, capabilities) {
+    //  return new Promise((resolve, reject) => {
+    //     selenium.start((err, process) => {
+    //      if(err) {
+    //       return reject(err);
+    //     }
+    //     seleniumServer = process;
+    //     resolve(process);
+    //   })
+    // });
+    // },
 
     // beforeSession: function (config, capabilities, specs) {
     // },
@@ -325,5 +332,4 @@ exports.config = {
     //     seleniumServer.kill();
         
     // }
-
 }

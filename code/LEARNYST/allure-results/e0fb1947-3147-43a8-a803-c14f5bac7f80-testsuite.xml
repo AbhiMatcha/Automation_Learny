@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529407530184' stop='1529407535091'>
+    <name> -- Testing signup Page --  --- Testing signup ---  -- Testing signup Page -- </name>
+    <title> -- Testing signup Page --  --- Testing signup ---  -- Testing signup Page -- </title>
+    <test-cases>
+        <test-case start='1529407535064' status='failed' stop='1529407535091'>
+            <name>-----> should be signed-up by user and confirm alert is displayed</name>
+            <title>-----> should be signed-up by user and confirm alert is displayed</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529407535067' status='passed' stop='1529407535081'>
+                    <name>POST /wd/hub/session/00c66b75fa244f2966f6cc3afd4bd53c/element</name>
+                    <title>POST /wd/hub/session/00c66b75fa244f2966f6cc3afd4bd53c/element</title>
+                    <attachments>
+                        <attachment title='Request' source='ba0be432-8ad2-4e14-8f52-f19beeae3e0e-attachment.json' type='application/json' size='49'/>
+                        <attachment title='Response' source='47211b6e-1fe8-4812-80a5-d725eb73c423-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529407535081' status='passed' stop='1529407535087'>
+                    <name>GET /wd/hub/session/00c66b75fa244f2966f6cc3afd4bd53c/screenshot</name>
+                    <title>GET /wd/hub/session/00c66b75fa244f2966f6cc3afd4bd53c/screenshot</title>
+                    <attachments>
+                        <attachment title='Response' source='3bced7bc-f759-48f6-ad9f-485e2b8b8d8b-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Failed: no such session
+                  (Driver info: chromedriver=2.38.552518 (183d19265345f54ce39cbb94cf81ba5f15905011),platform=Mac OS X 10.13.4 x86_64)</message>
+                <stack-trace>error properties: Object({ details: undefined, type: 'RuntimeError', seleniumStack: Object({ type: 'NoSuchDriver', message: 'A session is either terminated or not started', orgStatusMessage: 'no such session
+                  (Driver info: chromedriver=2.38.552518 (183d19265345f54ce39cbb94cf81ba5f15905011),platform=Mac OS X 10.13.4 x86_64)' }), shotTaken: true })
+                Error: A session is either terminated or not started
+                    at element("#resendEmail") - index.js:312:3</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

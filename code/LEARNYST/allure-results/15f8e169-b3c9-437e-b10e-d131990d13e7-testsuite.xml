@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529407555802' stop='1529407555826'>
+    <name> -- Testing signup Page --  --- Testing logout ---  -- Testing Logout Page -- </name>
+    <title> -- Testing signup Page --  --- Testing logout ---  -- Testing Logout Page -- </title>
+    <test-cases>
+        <test-case start='1529407555813' status='failed' stop='1529407555826'>
+            <name>-----> should be logged-out by user 1</name>
+            <title>-----> should be logged-out by user 1</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529407555814' status='passed' stop='1529407555821'>
+                    <name>POST /wd/hub/session/0af3fa43d4a983e4cafaf3b56e33d6ab/element</name>
+                    <title>POST /wd/hub/session/0af3fa43d4a983e4cafaf3b56e33d6ab/element</title>
+                    <attachments>
+                        <attachment title='Request' source='1cc3b763-28f0-4c72-92ea-40f74fd320b1-attachment.json' type='application/json' size='61'/>
+                        <attachment title='Response' source='6da9f4b5-5b3f-498d-8beb-6f4c0cb2f9d8-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529407555821' status='passed' stop='1529407555825'>
+                    <name>GET /wd/hub/session/0af3fa43d4a983e4cafaf3b56e33d6ab/screenshot</name>
+                    <title>GET /wd/hub/session/0af3fa43d4a983e4cafaf3b56e33d6ab/screenshot</title>
+                    <attachments>
+                        <attachment title='Response' source='4cd0d054-949b-4150-8964-16e9bf30ba6d-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Failed: Jasmine Clock was unable to install over custom global timer functions. Is the clock already installed?</message>
+                <stack-trace>Error: Jasmine Clock was unable to install over custom global timer functions. Is the clock already installed?
+                    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/logout_Spec.js:22:21)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

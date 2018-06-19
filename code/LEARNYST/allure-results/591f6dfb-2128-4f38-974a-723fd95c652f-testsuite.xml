@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529407632610' stop='1529407641311'>
+    <name> -- Testing signup Page --   -- Testing signup Page -- </name>
+    <title> -- Testing signup Page --   -- Testing signup Page -- </title>
+    <test-cases>
+        <test-case start='1529407641270' status='passed' stop='1529407641311'>
+            <name>-----> should be signed-up by user and confirm alert is displayed</name>
+            <title>-----> should be signed-up by user and confirm alert is displayed</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529407641272' status='passed' stop='1529407641286'>
+                    <name>POST /wd/hub/session/4f74315a4c90d45ca835c4eac8669d23/element</name>
+                    <title>POST /wd/hub/session/4f74315a4c90d45ca835c4eac8669d23/element</title>
+                    <attachments>
+                        <attachment title='Request' source='5e3bd455-a7bb-4889-8719-f6ec003c4de3-attachment.json' type='application/json' size='49'/>
+                        <attachment title='Response' source='3cdb1196-d508-47d9-bb2a-7735f2649e0d-attachment.json' type='application/json' size='137'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529407641289' status='passed' stop='1529407641309'>
+                    <name>GET /wd/hub/session/4f74315a4c90d45ca835c4eac8669d23/element/0.46980467899514133-1/displayed</name>
+                    <title>GET /wd/hub/session/4f74315a4c90d45ca835c4eac8669d23/element/0.46980467899514133-1/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='d5249ec6-ed56-433f-8e78-1a9893eaf297-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
