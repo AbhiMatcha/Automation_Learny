@@ -1,5 +1,6 @@
 var support_page = require('../pages/support_Page');
-//var startCourse_Com = require('../Components/startCourse_Com');
+var signup_com = require('../Components/signup_Com');
+var logout_com = require('../Components/logout_Com');
 var global = require('./Global_data');
 var timerCallback;
 	/* 
@@ -22,15 +23,19 @@ function suportFunction(username,password,title,description){
 	beforeAll(function(){
  	  browser.windowHandleFullscreen();
       support_page.support.open('learn/Learn?'); 
-  	  support_page.support.Login_signupFlow.waitForExist(5000);
-  	  support_page.support.Login_signupFlow.click();
-	  support_page.support.Signup_support.waitForExist(5000);
-	  support_page.support.Signup_support.click();
-	  support_page.support.Signup_email.waitForExist(5000);
-	  support_page.support.Signup_email.setValue(username);
-	  support_page.support.Signup_Password.setValue(password);
-	  support_page.support.do_Signup.waitForExist(5000);
-	  support_page.support.do_Signup.click();
+
+  	  logout_com.login_signupFlow.waitForExist(5000);
+  	  logout_com.login_signupFlow.click();
+  	 /*Taking elements from signup components*/
+	  signup_com.signup_coursePage.waitForExist(5000);
+	  signup_com.signup_coursePage.click();
+	  signup_com.signupEmail_coursePage.waitForExist(5000);
+	  signup_com.signupEmail_coursePage.setValue(username);
+	  signup_com.signupPassword_coursePage.waitForExist(5000);
+	  signup_com.signupPassword_coursePage.setValue(password);
+	  signup_com.signupForFree_coursePage.waitForExist(5000);
+	  signup_com.signupForFree_coursePage.click();
+	  /* Taking elements from support components */
 	  support_page.support.supportTab.waitForExist(6000);
 	  support_page.support.supportTab.click();
 	  support_page.support.subject.waitForExist(3000);

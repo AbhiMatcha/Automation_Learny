@@ -6,12 +6,13 @@ var global = require('./Global_data');
 Calling the login function from Login_spec,
 Scenario: User should be logged-in.      
 */
-describe(" -- Testing Login Page -- ", function() {
-  login(global.sup.username,global.sup.password);
-  });
+
+// describe(" -- Testing Login Page -- ", function() {
+//   login(global.sup.username,global.sup.password);
+//   });
 
 function login(userName,pass){	
-  // describe(" -- Testing Login Page -- ", function() {
+  describe(" -- Testing Login Page -- ", function() {
     beforeEach(function() {
       timerCallback = jasmine.createSpy("timerCallback");
       jasmine.clock().install();
@@ -34,7 +35,7 @@ function login(userName,pass){
     it('-----> should be logged-in by user',function() {
         expect(LoginPage.Login.verifyLogin.isVisible()).toBe(true); 
     });
-  // });
+  });
 }
 
 module.exports= login;

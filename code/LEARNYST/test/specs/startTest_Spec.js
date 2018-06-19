@@ -1,5 +1,7 @@
 'use strict';
 var startFreeTestPage = require('../pages/startTest_Page');
+var signUp_com=require('../Components/signup_Com');
+var buyCourse_com=require('../Components/buyCourse_Com')
 var global = require('./Global_data');
 var timerCallback;
 	/* 
@@ -23,23 +25,29 @@ function takeFreeTest(username,password){
 	beforeAll(function(){
 		browser.windowHandleFullscreen();
    		startFreeTestPage.startFreeTest.open('learn/Learn?');
-   		startFreeTestPage.startFreeTest.enrollFreeTest.click();	
-   		startFreeTestPage.startFreeTest.Signup_StartTest.waitForExist(5000);
-		expect(startFreeTestPage.startFreeTest.Signup_StartTest.isVisible()).toBe(true);
-		startFreeTestPage.startFreeTest.Signup_StartTest.click();
-		startFreeTestPage.startFreeTest.SignupEmail.waitForExist(5000);
-		startFreeTestPage.startFreeTest.SignupEmail.setValue(username);
-		startFreeTestPage.startFreeTest.SignupPassword.setValue(password);
-		startFreeTestPage.startFreeTest.doSignup.waitForExist(5000);
-		startFreeTestPage.startFreeTest.doSignup.click();
+		buyCourse_com.enrollFree.waitForExist(5000);
+   		buyCourse_com.enrollFree.click();	
+   		/* taking components from signup components */
+        signUp_com.signup_coursePage.waitForExist(5000);
+        signUp_com.signup_coursePage.click();
+        signUp_com.signupEmail_coursePage.waitForExist(5000);
+        signUp_com.signupEmail_coursePage.setValue(username);
+        signUp_com.signupPassword_coursePage.waitForExist(5000);
+        signUp_com.signupPassword_coursePage.setValue(password);
+    	signUp_com.signupForFree_coursePage.waitForExist(5000);
+	    signUp_com.signupForFree_coursePage.click();
+	    /* Taking elements from start test components */
 		startFreeTestPage.startFreeTest.takeTest.waitForExist(4000);
 		startFreeTestPage.startFreeTest.takeTest.click();
 		startFreeTestPage.startFreeTest.startTest.waitForExist(3000);
 		startFreeTestPage.startFreeTest.startTest.click();
 		startFreeTestPage.startFreeTest.wrongAnswer.waitForExist(5000);
 		startFreeTestPage.startFreeTest.wrongAnswer.click();
+		startFreeTestPage.startFreeTest.saveAnswer.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.saveAnswer.click();
+		startFreeTestPage.startFreeTest.nextQuestion.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.nextQuestion.click();
+		startFreeTestPage.startFreeTest.submitTest.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.submitTest.click();
 		// browser.back();
 		// /*This is taking retake from course main page*/
@@ -55,12 +63,14 @@ function takeFreeTest(username,password){
 		/* This is taking retest from the test completion page*/
 		// global.TestData.pause();
 		startFreeTestPage.startFreeTest.retakeTest.waitForVisible(5000);
-		// console.log(startFreeTestPage.startFreeTest.retakeTest);
 		startFreeTestPage.startFreeTest.retakeTest.click();
-		console.log(startFreeTestPage.startFreeTest.correctAnswer);
+		startFreeTestPage.startFreeTest.correctAnswer.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.correctAnswer.click();
+		startFreeTestPage.startFreeTest.saveAnswer.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.saveAnswer.click();
+		startFreeTestPage.startFreeTest.nextQuestion.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.nextQuestion.click();
+		startFreeTestPage.startFreeTest.submitTest.waitForVisible(5000);
 		startFreeTestPage.startFreeTest.submitTest.click();
 		startFreeTestPage.startFreeTest.solutions.waitForExist(3000);
 		startFreeTestPage.startFreeTest.solutions.click();
@@ -80,9 +90,7 @@ function takeFreeTest(username,password){
 
 	it('-----> should be complete test-in by user',function() {
 		expect(startFreeTestPage.startFreeTest.lastQuestionPopup.isVisible()).toBe(true);
-		console.log('Test completed sucessfully');
 		});	
  
 }
-
 module.exports= takeFreeTest;

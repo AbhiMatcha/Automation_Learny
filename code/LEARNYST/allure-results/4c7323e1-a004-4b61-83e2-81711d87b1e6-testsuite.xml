@@ -1,0 +1,56 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529398822901' stop='1529398836904'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529398832910' status='failed' stop='1529398836904'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529398832924' status='passed' stop='1529398836564'>
+                    <name>POST /wd/hub/session/90def1776eb43e51745dac211319290e/element</name>
+                    <title>POST /wd/hub/session/90def1776eb43e51745dac211319290e/element</title>
+                    <attachments>
+                        <attachment title='Request' source='a7fb48eb-d7d4-4020-8c84-2c90bd3b24ed-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='39bae366-42c1-4dba-bbdc-34eee47939b1-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps>
+                        <step start='1529398834272' status='passed' stop='1529398836556'>
+                            <name>GET /wd/hub/session/90def1776eb43e51745dac211319290e/screenshot</name>
+                            <title>GET /wd/hub/session/90def1776eb43e51745dac211319290e/screenshot</title>
+                            <attachments>
+                                <attachment title='Response' source='b9a0461a-89e6-414d-9253-d67003da4b55-attachment.json' type='application/json' size='160'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1529398836568' status='passed' stop='1529398836901'>
+                    <name>GET /wd/hub/session/90def1776eb43e51745dac211319290e/element/0.7167681733661175-1/displayed</name>
+                    <title>GET /wd/hub/session/90def1776eb43e51745dac211319290e/element/0.7167681733661175-1/displayed</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='e3675002-b60d-473d-ba25-27fb2773ed17-attachment.png' type='image/png' size='73202'/>
+                        <attachment title='Response' source='7d84abc2-eb4e-4892-ac51-bf3ca161997e-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Failed: element ("#js-welcomeUser") still not existing after 5000ms</message>
+                <stack-trace>error properties: Object({ details: undefined, type: 'WaitUntilTimeoutError', shotTaken: true })
+                Error: element ("#js-welcomeUser") still not existing after 5000ms
+                    at elementIdDisplayed("0.7167681733661175-1") - isVisible.js:71:55</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

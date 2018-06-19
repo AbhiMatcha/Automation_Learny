@@ -1,5 +1,6 @@
 var notes_page = require('../pages/notes_Page');
-//var startCourse_Com = require('../Components/startCourse_Com');
+var buyCourse_com = require('../Components/buyCourse_Com');
+var signup_com = require('../Components/signup_Com');
 var global = require('./Global_data');
 var timerCallback;
 	/* 
@@ -11,7 +12,6 @@ describe(" -- Testing free test Page -- ", function() {
   });
 
 function notesFunction(username,password,note,editedNote){
-
 	beforeEach(function() {
 	  timerCallback = jasmine.createSpy("timerCallback");
  	  jasmine.clock().install();
@@ -19,27 +19,26 @@ function notesFunction(username,password,note,editedNote){
  	  timerCallback();
     },);
   }); 
-
 	beforeAll(function(){
 	  browser.windowHandleFullscreen();
- 	  notes_page.notes.open('learn/Learn?'); 
- 	  notes_page.notes.enrollFree.click();
-	  notes_page.notes.Signup_forNotes.waitForExist(5000);
-	  notes_page.notes.Signup_forNotes.click();
-	  notes_page.notes.Signup_Email.waitForExist(5000);
-	  notes_page.notes.Signup_Email.setValue(username);
-	  notes_page.notes.Signup_Password.setValue(password);
-	  notes_page.notes.do_Signup.waitForExist(5000);
-	  notes_page.notes.do_Signup.click();
+ 	  notes_page.notes.open('learn/Learn?');
+ 	  buyCourse_com.enrollFree.waitForExist(5000);
+  	  buyCourse_com.enrollFree.click();
+  	  /*Taking elements from signup components*/
+	  signup_com.signup_coursePage.waitForExist(5000);
+	  signup_com.signup_coursePage.click();
+	  signup_com.signupEmail_coursePage.waitForExist(5000);
+	  signup_com.signupEmail_coursePage.setValue(username);
+	  signup_com.signupPassword_coursePage.waitForExist(5000);
+	  signup_com.signupPassword_coursePage.setValue(password);
+	  signup_com.signupForFree_coursePage.waitForExist(5000);
+	  signup_com.signupForFree_coursePage.click();
+	  /* Taking elements from notes components*/
 	  notes_page.notes.notesTab.waitForExist(5000);
 	  notes_page.notes.notesTab.click();
 	  notes_page.notes.createNotes.waitForExist(5000);
 	  notes_page.notes.createNotes.click();
-	  
-	  
-});
-	it('-----> should be complete test-in by user',function() {
-		notes_page.notes.enterNote.waitForExist(5000);
+	  notes_page.notes.enterNote.waitForExist(5000);
 	  notes_page.notes.enterNote.setValue(note);
 	  notes_page.notes.submitnote.waitForExist(5000);
 	  notes_page.notes.submitnote.click();
@@ -49,11 +48,12 @@ function notesFunction(username,password,note,editedNote){
 	  browser.elementIdClear(notes_page.notes.enterNote);
 	  notes_page.notes.enterNote.setValue(editedNote);
 	  notes_page.notes.submitnote.click();
-	  expect('.notesText').to.have.text('HI this is my second notes');
+	  notes_page.notes.deleteNote.waitForExist(5000);
+});
+	it('-----> should be complete test-in by user',function() {
+	  
+	    expect(notes_page.notes.deleteNote.isVisible()).toBe(true);
 	});
-
-
- 
 }
 
 module.exports= notesFunction;

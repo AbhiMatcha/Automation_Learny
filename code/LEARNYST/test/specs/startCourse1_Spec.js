@@ -1,6 +1,10 @@
 var startCoursePage1 = require('../pages/startCourse_Page');
 var global=require('./Global_data');
 var timerCallback;
+var buyCourse_com=require('../Components/buyCourse_Com')
+var startTest_com=require('../Components/startTest_Com')
+var signUp_com=require('../Components/signup_Com');
+
 /* 
 using the signup flow to complete payment.
 Scenario: 
@@ -25,22 +29,27 @@ function StartCourse1(username,password,contact,answer1,answer2)
 		// startCoursePage1.open('learn/Course-for-Automation');
 		browser.windowHandleFullscreen();
 		browser.url('http://learnnew.learnyst.com/learn/Course-for-Automation');		
-		startCoursePage1.startcourse1.enrollFree.waitForExist(5000);
-		startCoursePage1.startcourse1.enrollFree.click();
-		startCoursePage1.startcourse1.Signup_StartCourse.waitForExist(5000);
-		startCoursePage1.startcourse1.Signup_StartCourse.click();
-		startCoursePage1.startcourse1.SignupEmail.waitForExist(5000);
-		startCoursePage1.startcourse1.SignupEmail.setValue(username);
-		startCoursePage1.startcourse1.SignupPassword.setValue(password);
-		startCoursePage1.startcourse1.doSignup.waitForExist(5000);
-		startCoursePage1.startcourse1.doSignup.click();
-		startCoursePage1.startcourse1.resumeButton.waitForExist(5000);
-		startCoursePage1.startcourse1.resumeButton.click();
-		startCoursePage1.startcourse1.takeTest.waitForExist(5000);
-		startCoursePage1.startcourse1.takeTest.click();
+		buyCourse_com.enrollFree.waitForExist(5000);
+   		buyCourse_com.enrollFree.click();
+		/* taking components from signup components */
+        signUp_com.signup_coursePage.waitForExist(5000);
+        signUp_com.signup_coursePage.click();
+        signUp_com.signupEmail_coursePage.waitForExist(5000);
+        signUp_com.signupEmail_coursePage.setValue(username);
+        signUp_com.signupPassword_coursePage.waitForExist(5000);
+        signUp_com.signupPassword_coursePage.setValue(password);
+    	signUp_com.signupForFree_coursePage.waitForExist(5000);
+	    signUp_com.signupForFree_coursePage.click();
+	    /* taking the elements from startCourse1 components*/
+		startTest_com.resumeButton.waitForExist(5000);
+		startTest_com.resumeButton.click();
 		global.TestData.shortPause();
-		startCoursePage1.startcourse1.startTest.waitForExist(5000);
-		startCoursePage1.startcourse1.startTest.click();
+	    /* Taking elements from start test components */
+		startTest_com.takeTest.waitForExist(4000);
+		startTest_com.takeTest.click();
+		startTest_com.startTest.waitForExist(3000);
+		startTest_com.startTest.click();
+		/* taking the elements from startCourse1 components*/
 		startCoursePage1.startcourse1.correctAnswer1Test1.waitForExist(5000);
 		startCoursePage1.startcourse1.correctAnswer1Test1.click();
 		startCoursePage1.startcourse1.save.waitForExist(5000);
@@ -49,78 +58,27 @@ function StartCourse1(username,password,contact,answer1,answer2)
 		startCoursePage1.startcourse1.next.click();
 		startCoursePage1.startcourse1.wrongAnswer2Test1.waitForExist(5000);
 		startCoursePage1.startcourse1.wrongAnswer2Test1.click();
-		startCoursePage1.startcourse1.save.waitForExist(5000);
-		startCoursePage1.startcourse1.save.click();
-		startCoursePage1.startcourse1.next.waitForExist(5000);
-		startCoursePage1.startcourse1.next.click();
-		startCoursePage1.startcourse1.submit.waitForExist(5000);
-		startCoursePage1.startcourse1.submit.click();
+		 /* Taking elements from start test components */
+		startTest_com.saveAnswer.waitForExist(5000);
+		startTest_com.saveAnswer.click();
+		startTest_com.nextQuestion.waitForExist(5000);
+		startTest_com.nextQuestion.click();
+		startTest_com.submitTest.waitForExist(5000);
+		startTest_com.submitTest.click();
 		global.TestData.pause();
 		browser.back();
 		browser.back();
 		global.TestData.pause();
+		/* taking the elements from startCourse1 components*/
 		startCoursePage1.startcourse1.certificateTab.waitForExist(5000);
 		startCoursePage1.startcourse1.certificateTab.click();
 		startCoursePage1.startcourse1.downloadCertificate.waitForExist(5000);
 		startCoursePage1.startcourse1.downloadCertificate.click();
-		expect(startCoursePage1.startcourse1.submit.isVisible()).toBe(true);
-		// startCoursePage1.startcourse1.retakeTest.waitForExist(5000);
-		// startCoursePage1.startcourse1.retakeTest.click();
-		
-		
-		// global.TestData.shortPause();
-
-		// var correctAnswer1=$('[for="shipadd5545112"]');
-		// var correctAnswer2=$('[for="shipadd5545296"]');
-		// global.TestData.pause();
-
-		// startCoursePage1.startcourse1.correctAnswer1Test1.click();
-		// startCoursePage1.startcourse1.correctAnswer1Test1.waitForExist(5000);
-		// startCoursePage1.startcourse1.correctAnswer1Test1.click();
-		// startCoursePage1.startcourse1.save.waitForExist(5000);
-		// startCoursePage1.startcourse1.save.click();
-		// startCoursePage1.startcourse1.next.waitForExist(5000);
-		// startCoursePage1.startcourse1.next.click();
-		// startCoursePage1.startcourse1.correctAnswer2Test1.waitForExist(5000);
-		// startCoursePage1.startcourse1.correctAnswer2Test1.click();
-		// startCoursePage1.startcourse1.save.waitForExist(5000);
-		// startCoursePage1.startcourse1.save.click();
-		// startCoursePage1.startcourse1.next.waitForExist(5000);
-		// startCoursePage1.startcourse1.next.click();
-		// startCoursePage1.startcourse1.submit.waitForExist(5000);
-		// startCoursePage1.startcourse1.submit.click();
-
-		// global.TestData.shortPause();	
-		// browser.back();
-		// browser.back();
-		// global.TestData.shortPause();
-		// startCoursePage1.startcourse1.resumeButton.waitForExist(5000);
-		// console.log(startCoursePage1.startcourse1.resumeButton);
-		// startCoursePage1.startcourse1.resumeButton.click();
-		// startCoursePage1.startcourse1.takeTest.waitForExist(5000);
-		// startCoursePage1.startcourse1.takeTest.click();
-		// startCoursePage1.startcourse1.startTest.waitForExist(5000);
-		// startCoursePage1.startcourse1.startTest.click();
-		// startCoursePage1.startcourse1.answerTest2.waitForExist(5000);
-		// startCoursePage1.startcourse1.answerTest2.setValue(answer1);
-		// startCoursePage1.startcourse1.save.waitForExist(5000);
-		// startCoursePage1.startcourse1.save.click();
-		// startCoursePage1.startcourse1.next.waitForExist(5000);
-		// startCoursePage1.startcourse1.next.click();
-		// startCoursePage1.startcourse1.answerTest2.waitForExist(5000);
-		// startCoursePage1.startcourse1.answerTest2.setValue(answer2);
-		// startCoursePage1.startcourse1.save.waitForExist(5000);
-		// startCoursePage1.startcourse1.save.click();
-		// startCoursePage1.startcourse1.next.waitForExist(5000);
-		// startCoursePage1.startcourse1.next.click();
-		// startCoursePage1.startcourse1.submit.waitForExist(5000);
-		// startCoursePage1.startcourse1.submit.click();	
 	}); 
 
 	it('-----> start course',function() 
 	{   
-
-		console.log('Test case passed : User successfully signed-up and confirm alert is displayed');
+		expect(startCoursePage1.startcourse1.downloadCertificate.isVisible()).toBe(true);
 	});
 }
 

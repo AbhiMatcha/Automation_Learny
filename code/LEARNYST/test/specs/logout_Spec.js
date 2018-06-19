@@ -9,9 +9,10 @@ Calling the logout function from Logout_spec,
 Scenario: User should be logged-in through sign-up flow.
           User should be logged-out
 */
-describe(" -- Testing Logout Page -- ", function() {
-  logout(global.sup.username,global.sup.password); // logging out once user logged-in
-});
+
+// describe(" -- Testing Logout Page -- ", function() {
+//   logout(global.sup.username,global.sup.password); // logging out once user logged-in
+// });
 
 function logout(userName,pass)
 {   
@@ -24,16 +25,16 @@ function logout(userName,pass)
       },600);
   });
   beforeAll(function() {
-    LogoutPage.open('learn');
-    browser.windowHandleFullscreen();
-    LogoutPage.Logout.login_signupFlow.waitForExist(4000);
-    LogoutPage.Logout.login_signupFlow.click();
-    loginCom.login_email.waitForExist(5000);
-    loginCom.login_email.setValue(userName);
-    loginCom.login_Password.waitForExist(5000);
-    loginCom.login_Password.setValue(pass);  
-    LogoutPage.Logout.login.waitForExist(5000);
-    LogoutPage.Logout.login.click();
+    // LogoutPage.open('learn');
+    // browser.windowHandleFullscreen();
+    // LogoutPage.Logout.login_signupFlow.waitForExist(4000);
+    // LogoutPage.Logout.login_signupFlow.click();
+    // loginCom.login_email.waitForExist(5000);
+    // loginCom.login_email.setValue(userName);
+    // loginCom.login_Password.waitForExist(5000);
+    // loginCom.login_Password.setValue(pass);  
+    // LogoutPage.Logout.login.waitForExist(5000);
+    // LogoutPage.Logout.login.click();
     profileCom.selectProfile.waitForExist(6000);
     profileCom.selectProfile.click();
     profileCom.signout.waitForExist(5000);

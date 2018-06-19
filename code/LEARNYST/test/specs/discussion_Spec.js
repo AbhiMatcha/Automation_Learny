@@ -1,5 +1,6 @@
 var discussion_page = require('../pages/discussion_Page');
-//var startCourse_Com = require('../Components/startCourse_Com');
+var signup_com = require('../Components/signup_Com');
+var buyCourse_com = require('../Components/buyCourse_Com');
 var global = require('./Global_data');
 var timerCallback;
 	/* 
@@ -23,14 +24,18 @@ function discussionFunction(username,password,question,editedQuestion){
 	beforeAll(function(){
  	  browser.windowHandleFullscreen();
    	  discussion_page.discussion.open('learn/Learn?'); 
-  	  discussion_page.discussion.enrollFree.click();
-	  discussion_page.discussion.Signup_StartCourse.waitForExist(5000);
-	  discussion_page.discussion.Signup_StartCourse.click();
-	  discussion_page.discussion.SignupEmail.waitForExist(5000);
-	  discussion_page.discussion.SignupEmail.setValue(username);
-	  discussion_page.discussion.SignupPassword.setValue(password);
-	  discussion_page.discussion.doSignup.waitForExist(5000);
-	  discussion_page.discussion.doSignup.click();
+   	  buyCourse_com.enrollFree.waitForExist(5000);
+  	  buyCourse_com.enrollFree.click();
+  	  /*Taking elements from signup components*/
+	  signup_com.signup_coursePage.waitForExist(5000);
+	  signup_com.signup_coursePage.click();
+	  signup_com.signupEmail_coursePage.waitForExist(5000);
+	  signup_com.signupEmail_coursePage.setValue(username);
+	  signup_com.signupPassword_coursePage.waitForExist(5000);
+	  signup_com.signupPassword_coursePage.setValue(password);
+	  signup_com.signupForFree_coursePage.waitForExist(5000);
+	  signup_com.signupForFree_coursePage.click();
+	  /* Taking elements from discussion components*/
 	  discussion_page.discussion.discussiontab.waitForExist(5000);
 	  discussion_page.discussion.discussiontab.click();
 	  discussion_page.discussion.ask.waitForExist(5000);
@@ -46,22 +51,11 @@ function discussionFunction(username,password,question,editedQuestion){
 	  browser.elementIdClear(discussion_page.discussion.enterQuestion);   
 	  discussion_page.discussion.enterQuestion.setValue(editedQuestion);
 	  discussion_page.discussion.postQuestion.waitForExist(5000);
-	  discussion_page.discussion.postQuestion.click();	  
-	  // discussion_page.discussion.getQuestion.waitForExist(5000);
-	  // if(getQuestion === editedQuestion)
-	  // {
-	  // 	console.log('Edited the question');
-	  // }
-	  // discussion_page.discussion.deleteQuestion.waitForExist(5000);
-	  // discussion_page.discussion.deleteQuestion.click();
-	  // discussion_page.discussion.confirmDelete.waitForExist(5000);
-	  // discussion_page.discussion.confirmDelete.click();
-	  
+	  discussion_page.discussion.postQuestion.click();	
+	  discussion_page.discussion.deleteQuestion.waitForExist(5000);  
 });
 it('-----> should be complete test-in by user',function() {
-	
-	  expect(discussion_page.discussion.confirmDelete.isVisible()).toBe(true);
-	   
+	  expect(discussion_page.discussion.deleteQuestion.isVisible()).toBe(true);
 	});
  
 }

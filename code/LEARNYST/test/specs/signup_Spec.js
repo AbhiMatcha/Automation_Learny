@@ -13,7 +13,6 @@ Scenario:
 // });	
 function signup(username,pass)
 {			
-
 	describe(" -- Testing signup Page -- ", function() {
 		beforeEach(function() {
       timerCallback = jasmine.createSpy("timerCallback");
@@ -22,16 +21,9 @@ function signup(username,pass)
           timerCallback();
     },  60);
     }); 
-
-  // afterAll(function() {
-  //     browser.close()
-  // });
-
     beforeAll(function(){
 			SignupPage.open('signup');
-			//browser.windowHandleFullscreen();
-		});
-		it('-----> should be signed-up by user and confirm alert is displayed',function() {
+			browser.windowHandleFullscreen();
 			SignupPage.Signup.Signup_email.waitForExist(5000);
 			SignupPage.Signup.Signup_email.setValue(username);
 			SignupPage.Signup.Signup_Password.waitForExist(5000);
@@ -39,6 +31,8 @@ function signup(username,pass)
 			SignupPage.Signup.Signup_forFree.waitForExist(5000);
 			SignupPage.Signup.Signup_forFree.click();
 			SignupPage.Signup.Resend_email.waitForExist(5000);
+		});
+		it('-----> should be signed-up by user and confirm alert is displayed',function() {
 			expect(SignupPage.Signup.Resend_email.isVisible()).toBe(true);
 		});	
 	});	
