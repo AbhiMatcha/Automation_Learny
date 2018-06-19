@@ -49,7 +49,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'Chrome', //phantomjs || Chrome
+        browserName: 'phantomjs', //phantomjs || Chrome
         // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
         // browserName: 'phantomjs',
         // chromeOptions: {
@@ -78,6 +78,8 @@ exports.config = {
     // ===================
     // Define all options that are relevant for the WebdriverIO instance here
     //
+    debug: false,
+    execArgv: null,
     // By default WebdriverIO commands are executed in a synchronous way using
     // the wdio-sync package. If you still want to run your tests in an async way
     // e.g. using promises you can set the sync option to false.
@@ -168,22 +170,42 @@ exports.config = {
     
     // exports.config = {
     // ...
-    reporters: ['dot', 'allure'],
-    reporterOptions: {
-        allure: {
-            outputDir: 'allure-results'
-        }
-    },
     // ...
     // }
     //
+     reporters: ['spec', 'dot', 'allure','junit'],
+    reporterOptions: {
+        allure: {
+            outputDir: 'allure-results'
+        },
+        junit: {
+            outputDir: './'
+        }
+    },
     // =====
     // Hooks
     // =====
+    services: ['selenium-standalone','phantomjs'],
+     phantomjsOpts: {
+        webdriverLogfile: 'phantomjsdriver.log',
+        ignoreSslErrors: true
+     },
     // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
     // it and to build services around it. You can either apply a single function or an array of
     // methods to it. If one of them returns with a promise, WebdriverIO will wait until that promise got
     // resolved to continue.
+     jasmineNodeOpts: {
+        //
+        // Jasmine default timeout
+        defaultTimeoutInterval: (24*60*60*1000),
+      
+        // The Jasmine framework allows interception of each assertion in order to log the state of the application
+        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
+        // an assertion fails.
+        expectationResultHandler: function(passed, assertion) {
+            // do something
+        }
+    },
     /**
      * Gets executed once before all workers get launched.
      * @param {Object} config wdio configuration object
@@ -198,20 +220,20 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
+     onPrepare: function (config, capabilities) {
+     return new Promise((resolve, reject) => {
+        selenium.start((err, process) => {
+         if(err) {
+          return reject(err);
+        }
+        seleniumServer = process;
+        resolve(process);
+      })
+    });
+    },
+
     // beforeSession: function (config, capabilities, specs) {
     // },
-    // onPrepare: function (config, capabilities) {
-    //  return new Promise((resolve, reject) => {
-    //     selenium.start((err, process) => {
-    //      if(err) {
-    //       return reject(err);
-    //     }
-    //     seleniumServer = process;
-    //     resolve(process);
-    //   })
-    // });
-    // },
-      
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
