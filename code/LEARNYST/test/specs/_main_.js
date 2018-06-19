@@ -28,6 +28,8 @@ describe(" -- Testing signup Page -- ", function() {
     
     logoutSpec(global.sup.username,global.sup.password);
     global.TestData.pause();
+
+    browser.close();
     
    // });
 });

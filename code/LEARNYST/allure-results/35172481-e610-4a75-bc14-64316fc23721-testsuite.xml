@@ -1,0 +1,77 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529404409711' stop='1529404423185'>
+    <name> -- Testing signup Page --   -- Testing Logout Page -- </name>
+    <title> -- Testing signup Page --   -- Testing Logout Page -- </title>
+    <test-cases>
+        <test-case start='1529404419702' status='failed' stop='1529404423184'>
+            <name>-----> course should be enrolled by user</name>
+            <title>-----> course should be enrolled by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529404419708' status='passed' stop='1529404422756'>
+                    <name>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/element</name>
+                    <title>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/element</title>
+                    <attachments>
+                        <attachment title='Request' source='79fed77d-95b8-45c3-bce9-4d084b443b7e-attachment.json' type='application/json' size='62'/>
+                        <attachment title='Response' source='0db47f27-b381-4025-b339-61663d15f2ab-attachment.json' type='application/json' size='161'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529404423084' status='passed' stop='1529404423085'>
+                    <name>GET /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/element/0.41647381816263795-1/displayed</name>
+                    <title>GET /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/element/0.41647381816263795-1/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='a15e3c48-510e-4487-a5a8-9e1427e3f98e-attachment.json' type='application/json' size='137'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529404423086' status='passed' stop='1529404423089'>
+                    <name>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/elements</name>
+                    <title>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='31072fd9-d37f-48fb-aa7a-358728f4f37b-attachment.json' type='application/json' size='64'/>
+                        <attachment title='Response' source='5ee89325-9d4c-4bc5-a068-569c32cf9595-attachment.json' type='application/json' size='610'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529404423092' status='passed' stop='1529404423146'>
+                    <name>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/elements</name>
+                    <title>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='1af3ba32-6062-4686-a6af-4dd67a0f9b69-attachment.json' type='application/json' size='62'/>
+                        <attachment title='Response' source='1367f6f3-6e6a-4fc2-a326-cc78bc76994f-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529404423170' status='passed' stop='1529404423182'>
+                    <name>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/element</name>
+                    <title>POST /wd/hub/session/98c31b86ca8b20698af80e2a67a8cb6c/element</title>
+                    <attachments>
+                        <attachment title='Request' source='e1e30ac7-8c94-421f-8667-5f4b3893cdc5-attachment.json' type='application/json' size='64'/>
+                        <attachment title='Response' source='2085ac9d-1de6-4bdf-a2fb-072fa6c0b446-attachment.json' type='application/json' size='89'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Screenshot' source='f9ae6702-e487-49a3-8f2f-b317763cdcff-attachment.png' type='image/png' size='78792'/>
+                <attachment title='Response' source='2fac8248-5b1e-4ab7-9c06-5b1b93b624fe-attachment.json' type='application/json' size='137'/>
+                <attachment title='Response' source='9cf9ffb6-b2b4-4ab2-9575-3c703ef300cb-attachment.json' type='application/json' size='229'/>
+            </attachments>
+            <failure>
+                <message>Failed: Jasmine Clock was unable to install over custom global timer functions. Is the clock already installed?</message>
+                <stack-trace>Error: Jasmine Clock was unable to install over custom global timer functions. Is the clock already installed?
+                    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/profile_Spec.js:21:23)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

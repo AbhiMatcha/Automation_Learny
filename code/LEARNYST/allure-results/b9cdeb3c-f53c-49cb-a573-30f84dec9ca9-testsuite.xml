@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529403919452' stop='1529403936174'>
+    <name> -- Testing signup Page --   -- Testing signup Page -- </name>
+    <title> -- Testing signup Page --   -- Testing signup Page -- </title>
+    <test-cases>
+        <test-case start='1529403929457' status='failed' stop='1529403936173'>
+            <name>-----> should be signed-up by user and confirm alert is displayed</name>
+            <title>-----> should be signed-up by user and confirm alert is displayed</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529403929461' status='passed' stop='1529403935512'>
+                    <name>POST /wd/hub/session/5cf3d52685b80bf6df783d1fb595afae/element</name>
+                    <title>POST /wd/hub/session/5cf3d52685b80bf6df783d1fb595afae/element</title>
+                    <attachments>
+                        <attachment title='Request' source='e68abe99-2301-43cd-86e5-823cf5b4e364-attachment.json' type='application/json' size='49'/>
+                        <attachment title='Response' source='8e8b6f5c-23c9-406f-ac69-cda4d900abc5-attachment.json' type='application/json' size='160'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529403936160' status='passed' stop='1529403936168'>
+                    <name>GET /wd/hub/session/5cf3d52685b80bf6df783d1fb595afae/element/0.6064509597053296-1/displayed</name>
+                    <title>GET /wd/hub/session/5cf3d52685b80bf6df783d1fb595afae/element/0.6064509597053296-1/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='984027c0-e2f8-410d-8545-43933f63b247-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Screenshot' source='059e22c8-6d6c-4f63-b9ab-34b04fb85a6b-attachment.png' type='image/png' size='79299'/>
+                <attachment title='Response' source='204329db-4f95-497b-a7a2-0733c266e017-attachment.json' type='application/json' size='136'/>
+            </attachments>
+            <failure>
+                <message>Failed: element ("#resendEmail") still not existing after 5000ms</message>
+                <stack-trace>error properties: Object({ details: undefined, type: 'WaitUntilTimeoutError', shotTaken: true })
+                Error: element ("#resendEmail") still not existing after 5000ms
+                    at element("#resendEmail") - index.js:312:3</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
