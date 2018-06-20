@@ -153,18 +153,18 @@ exports.config = {
     
     //
     // Options to be passed to Jasmine.
-    jasmineNodeOpts: {
-        //
-        // Jasmine default timeout
-        defaultTimeoutInterval: 10000,
-        //
-        // The Jasmine framework allows interception of each assertion in order to log the state of the application
-        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
-        // an assertion fails.
-        expectationResultHandler: function(passed, assertion) {
-            // do something
-        }
-    },
+    // jasmineNodeOpts: {
+    //     //
+    //     // Jasmine default timeout
+    //     defaultTimeoutInterval: 10000,
+    //     //
+    //     // The Jasmine framework allows interception of each assertion in order to log the state of the application
+    //     // or website depending on the result. For example, it is pretty handy to take a screenshot every time
+    //     // an assertion fails.
+    //     expectationResultHandler: function(passed, assertion) {
+    //         // do something
+    //     }
+    // },
     
     // exports.config = {
     // ...
@@ -172,7 +172,7 @@ exports.config = {
     // }
     //
 
-     reporters: ['spec', 'dot', 'allure','junit'],
+     reporters: ['spec', 'allure','junit'],
     reporterOptions: {
         allure: {
             outputDir: 'allure-results'
@@ -328,8 +328,8 @@ exports.config = {
      */
     // onComplete: function(exitCode, config, capabilities) {
     // }
-    // onComplete: function(exitCode) {
-    //     seleniumServer.kill();
+    onComplete: function(exitCode) {
+        seleniumServer.kill();
         
-    // }
+    }
 }
