@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529413451124' stop='1529413456813'>
+    <name> -- Testing signup Page --   -- Testing signup Page -- </name>
+    <title> -- Testing signup Page --   -- Testing signup Page -- </title>
+    <test-cases>
+        <test-case start='1529413456270' status='failed' stop='1529413456812'>
+            <name>-----> should be signed-up by user and confirm alert is displayed</name>
+            <title>-----> should be signed-up by user and confirm alert is displayed</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='phantomjs'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"phantomjs"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529413456270' status='passed' stop='1529413456589'>
+                    <name>POST /wd/hub/session/4220fa60-73c1-11e8-8dc1-4575080eab7d/element</name>
+                    <title>POST /wd/hub/session/4220fa60-73c1-11e8-8dc1-4575080eab7d/element</title>
+                    <attachments>
+                        <attachment title='Request' source='b8f6e293-2f4c-4e1c-bda6-da6ee5c2107b-attachment.json' type='application/json' size='49'/>
+                        <attachment title='Response' source='6facf6ef-68ab-4f8d-9b3f-9eb7c3d65901-attachment.json' type='application/json' size='32992'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529413456590' status='passed' stop='1529413456807'>
+                    <name>POST /wd/hub/session/4220fa60-73c1-11e8-8dc1-4575080eab7d/elements</name>
+                    <title>POST /wd/hub/session/4220fa60-73c1-11e8-8dc1-4575080eab7d/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='a36aafff-cff5-4d5a-b3ed-de5cde035143-attachment.json' type='application/json' size='49'/>
+                        <attachment title='Response' source='6c532bbb-19c6-401a-9ac1-f894fd6f1355-attachment.json' type='application/json' size='93'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Expected false to be true.</message>
+                <stack-trace>Error: Expected false to be true.
+                    at &lt;Jasmine>
+                    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/signup_Spec.js:36:55)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

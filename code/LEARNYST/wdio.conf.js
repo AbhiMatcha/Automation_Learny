@@ -13,7 +13,7 @@ exports.config = {
     specs: [
         // './test/specs/**/*.js'
         // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
-        './test/specs/_main_.js'
+        './test/specs/login_Spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -47,7 +47,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'phantomjs', //phantomjs || Chrome
+        browserName: 'Chrome', //phantomjs || Chrome
         // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
         // browserName: 'phantomjs',
         // chromeOptions: {
