@@ -328,8 +328,8 @@ exports.config = {
      */
     // onComplete: function(exitCode, config, capabilities) {
     // }
-    onComplete: function(exitCode) {
-        seleniumServer.kill();
+    // onComplete: function(exitCode) {
+    //     seleniumServer.kill();
         
-    }
+    // }
 }
