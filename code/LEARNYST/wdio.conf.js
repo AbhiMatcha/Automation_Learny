@@ -65,11 +65,11 @@ exports.config = {
     //
     // exports.config = {
     // ...
-    // services: ['selenium-standalone'],
+    services: ['selenium-standalone'],
     // ...
     // Options are set here as well
-    // seleniumLogs: './logs',
-    //...
+    seleniumLogs: './logs',
+    // ...
     // };
     // ===================
     // Test Configurations
