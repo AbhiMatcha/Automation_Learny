@@ -326,10 +326,19 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
+<<<<<<< HEAD
     // onComplete: function(exitCode, config, capabilities) {
     // }
     // onComplete: function(exitCode) {
     //     seleniumServer.kill();
         
     // }
+=======
+    onComplete: function(exitCode, config, capabilities) {
+    }
+    onComplete: function(exitCode) {
+        seleniumServer.kill();
+    }
+
+>>>>>>> d4b326b29182b4498c43457ee3132c6daa193bf9
 }
