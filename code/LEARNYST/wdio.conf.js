@@ -47,7 +47,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'Chrome', //phantomjs || Chrome
+        browserName: 'phantomjs', //phantomjs || Chrome
         // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
         // browserName: 'phantomjs',
         // chromeOptions: {

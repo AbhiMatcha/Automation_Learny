@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529480010976' stop='1529480019182'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529480019004' status='passed' stop='1529480019180'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529480019008' status='passed' stop='1529480019042'>
+                    <name>POST /wd/hub/session/ef3a286220ccc857cd9c411b68625c6c/element</name>
+                    <title>POST /wd/hub/session/ef3a286220ccc857cd9c411b68625c6c/element</title>
+                    <attachments>
+                        <attachment title='Request' source='3dc53919-335d-460a-8fc3-f38f5feb26c6-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='64b1f13a-c2fa-4d59-be12-372088abdf24-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529480019052' status='passed' stop='1529480019176'>
+                    <name>GET /wd/hub/session/ef3a286220ccc857cd9c411b68625c6c/element/0.9786566660119103-1/displayed</name>
+                    <title>GET /wd/hub/session/ef3a286220ccc857cd9c411b68625c6c/element/0.9786566660119103-1/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='07863d48-556b-42e7-b9e8-9408614921ce-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
