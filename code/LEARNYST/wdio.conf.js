@@ -1,11 +1,12 @@
-var selenium = require('selenium-standalone');
+var selenium = require('selenium-standalone'); 
+//selenium-standalone || seleniumServer-standalone || wdio-selenium-standalone-service
 var seleniumServer;
 exports.config = {
     
     //
-    // ==================
+    // =================
     // Specify Test Files
-    // ==================
+    // =================
     // Define which test specs should run. The pattern is relative to the directory
     // from which `wdio` was called. Notice that, if you are calling `wdio` from an
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
@@ -52,17 +53,17 @@ exports.config = {
         browserName: 'Chrome', //phantomjs || Chrome
         // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
         // browserName: 'phantomjs',
-        // chromeOptions: {
-        //         args: [
-        //             '--disable-gpu',
-        //             '--disable-impl-side-painting',
-        //             '--disable-gpu-sandbox',
-        //             '--disable-accelerated-2d-canvas',
-        //             '--disable-accelerated-jpeg-decoding',
-        //             '--no-sandbox',
-        //             '--test-type=ui',
-        //             ],
-        //     },
+        chromeOptions: {
+                args: [
+                    '--disable-gpu',
+                    '--disable-impl-side-painting',
+                    '--disable-gpu-sandbox',
+                    '--disable-accelerated-2d-canvas',
+                    '--disable-accelerated-jpeg-decoding',
+                    '--no-sandbox',
+                    '--test-type=ui',
+                    ],
+            },
     }],
     //
     // exports.config = {
@@ -296,8 +297,7 @@ exports.config = {
      * @param {Object} exitCode 0 - success, 1 - fail
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
-     */
-    
+     */   
     onComplete: function(exitCode) {
         seleniumServer.kill();
     }

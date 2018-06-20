@@ -14,5 +14,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^2.40.0",
+    "selenium-standalone": "^6.15.1",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
 }
