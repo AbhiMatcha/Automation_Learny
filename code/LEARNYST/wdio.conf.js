@@ -65,7 +65,7 @@ exports.config = {
     //
     // exports.config = {
     // ...
-    services: ['selenium-standalone'],
+    services: ['selenium-server-standalone'],
     // ...
     // Options are set here as well
     seleniumLogs: './logs',
