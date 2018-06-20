@@ -1,5 +1,5 @@
-// var selenium = require('seleniumServer-standalone');
-// var seleniumServer;
+var selenium = require('selenium-standalone');
+var seleniumServer;
 exports.config = {
     
     //
@@ -200,17 +200,17 @@ exports.config = {
      */
     // beforeSession: function (config, capabilities, specs) {
     // },
-    // onPrepare: function (config, capabilities) {
-    //  return new Promise((resolve, reject) => {
-    //     selenium.start((err, process) => {
-    //      if(err) {
-    //       return reject(err);
-    //     }
-    //     seleniumServer = process;
-    //     resolve(process);
-    //   })
-    // });
-    // },
+    onPrepare: function (config, capabilities) {
+     return new Promise((resolve, reject) => {
+        selenium.start((err, process) => {
+         if(err) {
+          return reject(err);
+        }
+        seleniumServer = process;
+        resolve(process);
+      })
+    });
+    },
       
     /**
      * Gets executed before test execution begins. At this point you can access to all global
