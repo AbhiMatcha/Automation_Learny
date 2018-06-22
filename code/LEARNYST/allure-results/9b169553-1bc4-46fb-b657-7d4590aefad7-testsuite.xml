@@ -1,0 +1,82 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529560662541' stop='1529560671043'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529560670828' status='failed' stop='1529560671042'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"Chrome","chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529560670831' status='passed' stop='1529560670844'>
+                    <name>POST /wd/hub/session/aefbc3dce840818933bb70d748888e1c/element</name>
+                    <title>POST /wd/hub/session/aefbc3dce840818933bb70d748888e1c/element</title>
+                    <attachments>
+                        <attachment title='Request' source='f8804653-d724-4315-a84d-ca8997cdb9f0-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='4f97083b-ddc3-4930-8ced-2d7414aecc8a-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529560670847' status='passed' stop='1529560670865'>
+                    <name>GET /wd/hub/session/aefbc3dce840818933bb70d748888e1c/element/0.7318738850346111-1/displayed</name>
+                    <title>GET /wd/hub/session/aefbc3dce840818933bb70d748888e1c/element/0.7318738850346111-1/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='a1c0b18b-aff2-49da-8dce-9fa1af00d224-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529560670867' status='passed' stop='1529560670873'>
+                    <name>GET /wd/hub/session/aefbc3dce840818933bb70d748888e1c/window_handles</name>
+                    <title>GET /wd/hub/session/aefbc3dce840818933bb70d748888e1c/window_handles</title>
+                    <attachments>
+                        <attachment title='Response' source='fb3cdc45-eda1-49e1-bc24-7c083aa57a7b-attachment.json' type='application/json' size='146'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529560670873' status='passed' stop='1529560670999'>
+                    <name>DELETE /wd/hub/session/aefbc3dce840818933bb70d748888e1c/window</name>
+                    <title>DELETE /wd/hub/session/aefbc3dce840818933bb70d748888e1c/window</title>
+                    <attachments>
+                        <attachment title='Response' source='685d065c-e368-414a-9fce-953a2ea8ba35-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529560671001' status='passed' stop='1529560671026'>
+                    <name>POST /wd/hub/session/aefbc3dce840818933bb70d748888e1c/window</name>
+                    <title>POST /wd/hub/session/aefbc3dce840818933bb70d748888e1c/window</title>
+                    <attachments>
+                        <attachment title='Request' source='f113f89f-f691-4109-bda4-d10a686522f4-attachment.json' type='application/json' size='118'/>
+                        <attachment title='Response' source='2f2e0a76-df35-429b-95c7-621254ce2c5f-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529560671028' status='passed' stop='1529560671036'>
+                    <name>GET /wd/hub/session/aefbc3dce840818933bb70d748888e1c/screenshot</name>
+                    <title>GET /wd/hub/session/aefbc3dce840818933bb70d748888e1c/screenshot</title>
+                    <attachments>
+                        <attachment title='Response' source='9a54f3a1-b0b5-4272-90cd-9aef7ed4a078-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Failed: no such session
+                  (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.13.4 x86_64)</message>
+                <stack-trace>error properties: Object({ details: undefined, type: 'RuntimeError', seleniumStack: Object({ type: 'NoSuchDriver', message: 'A session is either terminated or not started', orgStatusMessage: 'no such session
+                  (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.13.4 x86_64)' }), shotTaken: true })
+                Error: A session is either terminated or not started
+                    at window("CDwindow-10DFFC271B0AF46086D7A436766EF174") - switchTab.js:28:21
+                    at switchTab("CDwindow-10DFFC271B0AF46086D7A436766EF174") - close.js:18:35</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

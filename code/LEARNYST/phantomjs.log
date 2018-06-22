@@ -1,0 +1,11 @@
+[ERROR - 2018-06-21T10:44:31.151Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T10:45:49.356Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T11:27:40.278Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T11:38:09.183Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T11:47:27.113Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T12:04:26.600Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T12:09:19.577Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T12:10:19.783Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T12:17:02.227Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T12:19:03.458Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}
+[ERROR - 2018-06-21T12:20:28.120Z] GhostDriver - main.fail - {"line":85,"sourceURL":"phantomjs://code/main.js","stack":"global code@phantomjs://code/main.js:85:56"}

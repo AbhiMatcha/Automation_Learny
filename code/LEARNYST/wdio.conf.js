@@ -16,7 +16,7 @@ exports.config = {
         // './test/specs/**/*.js'
         // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
         
-        './test/specs/_main_.js'
+        './test/specs/login_Spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -38,7 +38,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -48,27 +48,43 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
-        browserName: 'Chrome', //phantomjs || Chrome
+        browserName: 'phantomjs', //phantomjs || Chrome
         // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
         // browserName: 'phantomjs',
-        chromeOptions: {
-                args: [
-                    '--disable-gpu',
-                    '--disable-impl-side-painting',
-                    '--disable-gpu-sandbox',
-                    '--disable-accelerated-2d-canvas',
-                    '--disable-accelerated-jpeg-decoding',
-                    '--no-sandbox',
-                    '--test-type=ui',
-                    ],
+
+    /**************************** This is for chrome  ************************************/
+
+        // chromeOptions: {
+        //         args: [
+        //             '--disable-gpu',
+        //             '--disable-impl-side-painting',
+        //             '--disable-gpu-sandbox',
+        //             '--disable-accelerated-2d-canvas',
+        //             '--disable-accelerated-jpeg-decoding',
+        //             '--no-sandbox',
+        //             '--test-type=ui',
+        //             ],
+        //     },
+    /**************************** This is for chrome  ************************************/
+
+    /**************************** This is for phantomjs ************************************/
+        services: ['phantomjs',selenium],
+
+        phantomjsOpts: {
+                webdriverLogfile: 'phantomjs.log',
+                maxInstances: 1,
+                ignoreSslErrors: true 
             },
+    /**************************** This is for phantomjs ************************************/
+      
     }],
-    //
-    // exports.config = {
-    // ...
-    // services: ['selenium-standalone'],
+ 
+    
+
+
+
     // ...
     // Options are set here as well
     // seleniumLogs: './logs',
@@ -139,7 +155,11 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // services: [],//
-    services: ['phantomjs'],
+
+
+    //
+    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -151,14 +171,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    reporters: ['dot'],
+    // reporters: ['dot'],
     
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
         //
         // Jasmine default timeout
-        defaultTimeoutInterval: 10000,
+        defaultTimeoutInterval: 20000,
         //
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
@@ -298,9 +318,14 @@ exports.config = {
      * @param {Object} exitCode 0 - success, 1 - fail
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
-     */   
-    onComplete: function(exitCode) {
-        seleniumServer.kill();
+     */ 
+
+    onComplete: function(exitCode, config, capabilities) {
+        seleniumServer.kill();      
     }
+
+    // if (this.process) { 
+    //  this.process.kill() 
+    // }
 
 }
