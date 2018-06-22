@@ -1,10 +1,11 @@
-// var selenium = require('seleniumServer-standalone');
-// var seleniumServer;
+var selenium = require('selenium-standalone'); 
+//selenium-standalone || seleniumServer-standalone || wdio-selenium-standalone-service
+var seleniumServer;
 exports.config = {
     //
-    // ==================
+    // =================
     // Specify Test Files
-    // ==================
+    // =================
     // Define which test specs should run. The pattern is relative to the directory
     // from which `wdio` was called. Notice that, if you are calling `wdio` from an
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
@@ -13,6 +14,10 @@ exports.config = {
     specs: [
         // './test/specs/**/*.js'
         // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
         './test/specs/login_Spec.js'
     ],
     // Patterns to exclude.
@@ -35,7 +40,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -45,11 +50,14 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'phantomjs', //phantomjs || Chrome
         // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
         // browserName: 'phantomjs',
+
+    /**************************** This is for chrome  ************************************/
+
         // chromeOptions: {
         //         args: [
         //             '--disable-gpu',
@@ -61,7 +69,20 @@ exports.config = {
         //             '--test-type=ui',
         //             ],
         //     },
+    /**************************** This is for chrome  ************************************/
+
+    /**************************** This is for phantomjs ************************************/
+        services: ['phantomjs',selenium],
+
+        phantomjsOpts: {
+                webdriverLogfile: 'phantomjs.log',
+                maxInstances: 1,
+                ignoreSslErrors: true 
+            },
+    /**************************** This is for phantomjs ************************************/
+      
     }],
+<<<<<<< HEAD
     //
     // exports.config = {
     // ...
@@ -71,6 +92,18 @@ exports.config = {
   // ...
   // Options are set here as well
      seleniumLogs: './logs',
+=======
+ 
+    
+
+
+
+    // ...
+    // Options are set here as well
+    // seleniumLogs: './logs',
+    //...
+    // };
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
     // ===================
     // Test Configurations
     // ===================
@@ -138,6 +171,11 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // services: [],//
+
+
+    //
+    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -149,10 +187,11 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-    reporters: ['dot'],
+    // reporters: ['dot'],
     
     //
     // Options to be passed to Jasmine.
+<<<<<<< HEAD
     // jasmineNodeOpts: {
     //     //
     //     // Jasmine default timeout
@@ -165,6 +204,20 @@ exports.config = {
     //         // do something
     //     }
     // },
+=======
+    jasmineNodeOpts: {
+        //
+        // Jasmine default timeout
+        defaultTimeoutInterval: 20000,
+        //
+        // The Jasmine framework allows interception of each assertion in order to log the state of the application
+        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
+        // an assertion fails.
+        expectationResultHandler: function(passed, assertion) {
+            // do something
+        }
+    },
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
     
     // exports.config = {
     // ...
@@ -226,6 +279,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
+<<<<<<< HEAD
 
     //  onPrepare: function (config, capabilities) {
     //  return new Promise((resolve, reject) => {
@@ -241,6 +295,22 @@ exports.config = {
 
     // beforeSession: function (config, capabilities, specs) {
     // },
+=======
+    // beforeSession: function (config, capabilities, specs) {
+    // },
+    onPrepare: function (config, capabilities) {
+     return new Promise((resolve, reject) => {
+        selenium.start((err, process) => {
+         if(err) {
+          return reject(err);
+        }
+        seleniumServer = process;
+        resolve(process);
+      })
+    });
+    },
+      
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
@@ -325,6 +395,7 @@ exports.config = {
      * @param {Object} exitCode 0 - success, 1 - fail
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
+<<<<<<< HEAD
      */
 <<<<<<< HEAD
     // onComplete: function(exitCode, config, capabilities) {
@@ -334,11 +405,17 @@ exports.config = {
         
     // }
 =======
+=======
+     */ 
+
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
     onComplete: function(exitCode, config, capabilities) {
+        seleniumServer.kill();      
     }
-    onComplete: function(exitCode) {
-        seleniumServer.kill();
-    }
+
+    // if (this.process) { 
+    //  this.process.kill() 
+    // }
 
 >>>>>>> d4b326b29182b4498c43457ee3132c6daa193bf9
 }

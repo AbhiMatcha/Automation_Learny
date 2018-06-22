@@ -1,0 +1,65 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529583021228' stop='1529583053730'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529583041237' status='failed' stop='1529583053729'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"Chrome","chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529583041242' status='passed' stop='1529583053495'>
+                    <name>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/element</name>
+                    <title>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/element</title>
+                    <attachments>
+                        <attachment title='Request' source='26f6c380-d889-4c1a-9164-c8cc5dc87d7b-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='2eb56425-9ca6-40c8-873a-8b04f8e78bbe-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529583053500' status='passed' stop='1529583053517'>
+                    <name>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/window/fullscreen</name>
+                    <title>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/window/fullscreen</title>
+                    <attachments>
+                        <attachment title='Response' source='53b50283-322a-4b5f-828a-49b8a012e9b2-attachment.json' type='application/json' size='590'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529583053522' status='passed' stop='1529583053696'>
+                    <name>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/elements</name>
+                    <title>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='bead3c48-0fa6-4468-bc03-c4145dddcbf0-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='c0945a53-c785-4178-8420-99247d67abd5-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529583053705' status='passed' stop='1529583053722'>
+                    <name>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/element</name>
+                    <title>POST /wd/hub/session/e85b25bca82ad43896acbb5016c9d44b/element</title>
+                    <attachments>
+                        <attachment title='Request' source='f95b3888-2fb9-47ba-8ea8-21cb9e083c59-attachment.json' type='application/json' size='70'/>
+                        <attachment title='Response' source='957d2fa8-778a-4b3f-a30b-c97943e5b00a-attachment.json' type='application/json' size='89'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Expected false to be true.</message>
+                <stack-trace>Error: Expected false to be true.
+                    at &lt;Jasmine>
+                    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js:36:57)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

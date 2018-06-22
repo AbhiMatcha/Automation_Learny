@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529576031393' stop='1529576041115'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529576041079' status='passed' stop='1529576041114'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"Chrome","chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529576041080' status='passed' stop='1529576041093'>
+                    <name>POST /wd/hub/session/8ad0af90a2445ac75b55bd35f8ee4f1b/element</name>
+                    <title>POST /wd/hub/session/8ad0af90a2445ac75b55bd35f8ee4f1b/element</title>
+                    <attachments>
+                        <attachment title='Request' source='8e747191-0381-40cc-9499-c57895f5cb61-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='abb3f251-69d6-42b3-b62b-f4aec567d53a-attachment.json' type='application/json' size='136'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529576041094' status='passed' stop='1529576041113'>
+                    <name>GET /wd/hub/session/8ad0af90a2445ac75b55bd35f8ee4f1b/element/0.5298748253603294-1/displayed</name>
+                    <title>GET /wd/hub/session/8ad0af90a2445ac75b55bd35f8ee4f1b/element/0.5298748253603294-1/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='d0e24bae-143e-4372-82e9-71fb4be34246-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

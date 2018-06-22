@@ -8,7 +8,12 @@
   },
   "devDependencies": {
     "wdio-allure-reporter": "^0.6.2",
+<<<<<<< HEAD
     "wdio-selenium-standalone-service": "~0.1",
+=======
+    "wdio-phantomjs-service": "^0.2.2",
+    "wdio-selenium-standalone-service": "~0.1"
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,4 +24,12 @@
   // },
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
+=======
+  "dependencies": {
+    "chromedriver": "^2.40.0",
+    "selenium-standalone": "^6.15.1",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+>>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
 }
