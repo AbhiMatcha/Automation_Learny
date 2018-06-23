@@ -21,7 +21,12 @@ function signup(username,pass)
           timerCallback();
     },  60);
     }); 
+	afterAll(function(){
+      browser.sessions();
+    });
+
     beforeAll(function(){
+    	browser.sessions();
 			SignupPage.open('signup');
 			browser.windowHandleFullscreen();
 			SignupPage.Signup.Signup_email.waitForExist(5000);

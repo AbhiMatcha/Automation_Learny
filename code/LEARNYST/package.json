@@ -7,16 +7,26 @@
     "test": "test"
   },
   "devDependencies": {
+    "mocha": "^5.2.0",
     "wdio-allure-reporter": "^0.6.2",
 <<<<<<< HEAD
     "wdio-selenium-standalone-service": "~0.1",
 =======
     "wdio-phantomjs-service": "^0.2.2",
+<<<<<<< HEAD
     "wdio-selenium-standalone-service": "~0.1"
 >>>>>>> a2311f3fa0cffbe7db1554ee9d79e7d3df4f9ba1
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+=======
+    "wdio-selenium-standalone-service": "~0.0.9",
+    "wdio-testingbot-service": "^0.1.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runTest": "gulp runTest"
+>>>>>>> 1eced0746df75816855996957f25b8a92b1c3eaf
   },
 
   // "devDependencies": {
@@ -28,6 +38,9 @@
 =======
   "dependencies": {
     "chromedriver": "^2.40.0",
+    "gulp": "^4.0.0",
+    "gulp-webdriver": "^2.0.3",
+    "phantomjs-prebuilt": "^2.1.16",
     "selenium-standalone": "^6.15.1",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }

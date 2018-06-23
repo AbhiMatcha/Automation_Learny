@@ -1,0 +1,9 @@
+{
+    "message": "no such session\n  (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.13.4 x86_64)",
+    "type": "RuntimeError",
+    "seleniumStack": {
+        "type": "NoSuchDriver",
+        "message": "A session is either terminated or not started",
+        "orgStatusMessage": "no such session\n  (Driver info: chromedriver=2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363),platform=Mac OS X 10.13.4 x86_64)"
+    }
+}

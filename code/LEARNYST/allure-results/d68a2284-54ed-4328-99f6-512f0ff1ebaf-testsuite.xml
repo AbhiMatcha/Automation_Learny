@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529732503058' stop='1529732503928'>
+    <name> -- Testing signup Page --   -- Testing Logout Page -- </name>
+    <title> -- Testing signup Page --   -- Testing Logout Page -- </title>
+    <test-cases>
+        <test-case start='1529732503799' status='failed' stop='1529732503928'>
+            <name>-----> course should be enrolled by user</name>
+            <title>-----> course should be enrolled by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529732503803' status='passed' stop='1529732503869'>
+                    <name>POST /wd/hub/session/acb376dc114428a95282f9e447e2e2d8/element</name>
+                    <title>POST /wd/hub/session/acb376dc114428a95282f9e447e2e2d8/element</title>
+                    <attachments>
+                        <attachment title='Request' source='2d631484-f8be-44e0-ac11-874f6cf908ee-attachment.json' type='application/json' size='62'/>
+                        <attachment title='Response' source='3a00a2b3-69a3-4012-8442-3610f61e048c-attachment.json' type='application/json' size='610'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529732503873' status='passed' stop='1529732503899'>
+                    <name>POST /wd/hub/session/acb376dc114428a95282f9e447e2e2d8/elements</name>
+                    <title>POST /wd/hub/session/acb376dc114428a95282f9e447e2e2d8/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='53e998a2-275a-4f6c-a2f4-09dc869a1bd2-attachment.json' type='application/json' size='62'/>
+                        <attachment title='Response' source='9e0c4344-0780-4fd8-8ba7-2e5cc5ffc3f9-attachment.json' type='application/json' size='160'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529732503899' status='passed' stop='1529732503922'>
+                    <name>GET /wd/hub/session/acb376dc114428a95282f9e447e2e2d8/element/0.4912953851851545-7/displayed</name>
+                    <title>GET /wd/hub/session/acb376dc114428a95282f9e447e2e2d8/element/0.4912953851851545-7/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='42ad09a4-210e-4ef6-b601-6f12e5717bd7-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Failed: Jasmine Clock was unable to install over custom global timer functions. Is the clock already installed?</message>
+                <stack-trace>Error: Jasmine Clock was unable to install over custom global timer functions. Is the clock already installed?
+                    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/profile_Spec.js:21:23)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

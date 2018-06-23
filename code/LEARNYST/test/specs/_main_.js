@@ -13,6 +13,7 @@ check Login, Logout, Signup module
 describe(" -- Testing signup Page -- ", function() {
     // describe("--- Testing signup ---", function(){
 	signupSpec(global.forenroll.Random_email.value(),global.forenroll.password);
+<<<<<<< HEAD
     global.TestData.pause();
     // });
     // describe("--- Testing save number ---", function(){
@@ -33,6 +34,20 @@ describe(" -- Testing signup Page -- ", function() {
     global.TestData.pause();
     // browser.close();
     // });
+=======
+
+    // saveNumber(global.TestData.CONTACT,global.forenroll.Random_email.value(),global.forenroll.password);
+
+    // browser.back();
+
+    // logoutSpec(global.sup.username,global.sup.password);
+
+    // loginSpec(global.sup.username,global.sup.password);
+    
+    // logoutSpec(global.sup.username,global.sup.password);
+    
+   
+>>>>>>> 1eced0746df75816855996957f25b8a92b1c3eaf
 });
 /* 
  Buy course
