@@ -1,0 +1,9 @@
+{
+    "message": "Unable to switch to window (closed?)",
+    "type": "RuntimeError",
+    "seleniumStack": {
+        "type": "NoSuchWindow",
+        "message": "A request to switch to a different window could not be satisfied because the window could not be found.",
+        "orgStatusMessage": "{\"errorMessage\":\"Unable to switch to window (closed?)\",\"request\":{\"headers\":{\"Accept\":\"application/json\",\"Connection\":\"keep-alive\",\"Content-Length\":\"95\",\"Content-Type\":\"application/json; charset=UTF-8\",\"User-Agent\":\"webdriverio/webdriverio/4.13.0\",\"host\":\"127.0.0.1:4444\"},\"httpVersion\":\"1.1\",\"method\":\"POST\",\"post\":\"{\\\"name\\\":\\\"1aad5000-7605-11e8-8ea4-27e0feb853eb\\\",\\\"handle\\\":\\\"1aad5000-7605-11e8-8ea4-27e0feb853eb\\\"}\",\"url\":\"/window\",\"urlParsed\":{\"anchor\":\"\",\"query\":\"\",\"file\":\"window\",\"directory\":\"/\",\"path\":\"/window\",\"relative\":\"/window\",\"port\":\"\",\"host\":\"\",\"password\":\"\",\"user\":\"\",\"userInfo\":\"\",\"authority\":\"\",\"protocol\":\"\",\"source\":\"/window\",\"queryKey\":{},\"chunks\":[\"window\"]},\"urlOriginal\":\"/session/1aab2d20-7605-11e8-8ea4-27e0feb853eb/window\"}}"
+    }
+}

@@ -1,9 +1,14 @@
 var selenium = require('selenium-standalone'); 
 //selenium-standalone || seleniumServer-standalone || wdio-selenium-standalone-service
 var seleniumServer;
+// selenium.start({
+//         spawnOptions: {
+//         stdio: 'inherit'
+//         }
+//     }, function(err, child) {
+//     child.kill();
+// });
 exports.config = {
-    
-    //
     // =================
     // Specify Test Files
     // =================
@@ -11,18 +16,15 @@ exports.config = {
     // from which `wdio` was called. Notice that, if you are calling `wdio` from an
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
-    //
     specs: [
         // './test/specs/**/*.js'
-        // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);
-        
+        // './test/Components/signup_Com.js',browser.moveTo(LogoutPage.Logout.User_Profile,165.859,36);        
         './test/specs/login_Spec.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
-    //
     // ============
     // Capabilities
     // ============
@@ -37,7 +39,6 @@ exports.config = {
     // files and you set maxInstances to 10, all spec files will get tested at the same time
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
-    //
     maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
@@ -50,29 +51,30 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 1,
         //
-        browserName: 'phantomjs', //phantomjs || Chrome
-        // phantomjs.binary.path: '//Users//learnyst//Downloads//PhantomJs//phantomjs-2.1.1-macosx//bin',
-        // browserName: 'phantomjs',
+        browserName: 'Chrome', //phantomjs || Chrome
 
     /**************************** This is for chrome  ************************************/
 
-        // chromeOptions: {
-        //         args: [
-        //             '--disable-gpu',
-        //             '--disable-impl-side-painting',
-        //             '--disable-gpu-sandbox',
-        //             '--disable-accelerated-2d-canvas',
-        //             '--disable-accelerated-jpeg-decoding',
-        //             '--no-sandbox',
-        //             '--test-type=ui',
-        //             ],
-        //     },
+        chromeOptions: {
+                args: [
+                    '--disable-gpu',
+                    '--disable-impl-side-painting',
+                    '--disable-gpu-sandbox',
+                    '--disable-accelerated-2d-canvas',
+                    '--disable-accelerated-jpeg-decoding',
+                    '--no-sandbox',
+                    '--test-type=ui',
+                    ],
+            },
     /**************************** This is for chrome  ************************************/
 
     /**************************** This is for phantomjs ************************************/
-        services: ['phantomjs',selenium],
+            services: ['phantomjs',selenium,'testingbot'],
+            user: process.env.TB_KEY,
+            key: process.env.TB_SECRET,
+            tbTunnel: true,
 
-        phantomjsOpts: {
+            phantomjsOpts: {
                 webdriverLogfile: 'phantomjs.log',
                 maxInstances: 1,
                 ignoreSslErrors: true 
@@ -80,11 +82,6 @@ exports.config = {
     /**************************** This is for phantomjs ************************************/
       
     }],
- 
-    
-
-
-
     // ...
     // Options are set here as well
     // seleniumLogs: './logs',
@@ -222,7 +219,7 @@ exports.config = {
      */
     // beforeSession: function (config, capabilities, specs) {
     // },
-    onPrepare: function (config, capabilities) {
+    before: function (config, capabilities) {
      return new Promise((resolve, reject) => {
         selenium.start((err, process) => {
          if(err) {
@@ -233,7 +230,12 @@ exports.config = {
       })
     });
     },
-      
+    
+    after: function(exitCode) {
+        seleniumServer.kill();  
+        console.log('that\'s it');
+    },
+
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
@@ -319,11 +321,6 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */ 
-
-    onComplete: function(exitCode, config, capabilities) {
-        seleniumServer.kill();      
-    }
-
     // if (this.process) { 
     //  this.process.kill() 
     // }

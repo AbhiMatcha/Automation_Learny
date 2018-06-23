@@ -1,0 +1,9 @@
+{
+    "message": "Currently Window handle/name is invalid (closed?)",
+    "type": "RuntimeError",
+    "seleniumStack": {
+        "type": "NoSuchWindow",
+        "message": "A request to switch to a different window could not be satisfied because the window could not be found.",
+        "orgStatusMessage": "{\"errorMessage\":\"Currently Window handle/name is invalid (closed?)\",\"request\":{\"headers\":{\"Accept\":\"application/json\",\"Connection\":\"keep-alive\",\"User-Agent\":\"webdriverio/webdriverio/4.13.0\",\"host\":\"127.0.0.1:4444\"},\"httpVersion\":\"1.1\",\"method\":\"GET\",\"url\":\"/screenshot\",\"urlParsed\":{\"anchor\":\"\",\"query\":\"\",\"file\":\"screenshot\",\"directory\":\"/\",\"path\":\"/screenshot\",\"relative\":\"/screenshot\",\"port\":\"\",\"host\":\"\",\"password\":\"\",\"user\":\"\",\"userInfo\":\"\",\"authority\":\"\",\"protocol\":\"\",\"source\":\"/screenshot\",\"queryKey\":{},\"chunks\":[\"screenshot\"]},\"urlOriginal\":\"/session/1aab2d20-7605-11e8-8ea4-27e0feb853eb/screenshot\"}}"
+    }
+}

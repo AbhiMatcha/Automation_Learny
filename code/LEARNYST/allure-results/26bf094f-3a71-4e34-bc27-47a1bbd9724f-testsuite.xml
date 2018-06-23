@@ -1,0 +1,123 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529665050452' stop='1529665050495'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1529665050463' status='failed' stop='1529665050483'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":5,"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529665050464' status='failed' stop='1529665050483'>
+                    <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/url</name>
+                    <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/url</title>
+                    <attachments>
+                        <attachment title='Request' source='64e58999-1035-41ed-b123-2701b32b5350-attachment.json' type='application/json' size='51'/>
+                    </attachments>
+                    <steps>
+                        <step start='1529665050467' status='failed' stop='1529665050483'>
+                            <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/window/fullscreen</name>
+                            <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/window/fullscreen</title>
+                            <attachments/>
+                            <steps>
+                                <step start='1529665050467' status='failed' stop='1529665050483'>
+                                    <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                    <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                    <attachments>
+                                        <attachment title='Request' source='2ae3275c-536f-4a42-9e3d-9df6f1fcfd2d-attachment.json' type='application/json' size='70'/>
+                                    </attachments>
+                                    <steps>
+                                        <step start='1529665050468' status='failed' stop='1529665050483'>
+                                            <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                            <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                            <attachments>
+                                                <attachment title='Request' source='6411ebc7-1f85-453d-998c-a2385e1d9dcd-attachment.json' type='application/json' size='70'/>
+                                            </attachments>
+                                            <steps>
+                                                <step start='1529665050468' status='failed' stop='1529665050483'>
+                                                    <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                                    <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                                    <attachments>
+                                                        <attachment title='Request' source='b4f14539-f1a0-4a14-93d0-a56574a92da3-attachment.json' type='application/json' size='73'/>
+                                                    </attachments>
+                                                    <steps>
+                                                        <step start='1529665050469' status='failed' stop='1529665050483'>
+                                                            <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                                            <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                                            <attachments>
+                                                                <attachment title='Request' source='251259d2-fc14-4ade-8b81-7be640c19083-attachment.json' type='application/json' size='73'/>
+                                                            </attachments>
+                                                            <steps>
+                                                                <step start='1529665050469' status='failed' stop='1529665050483'>
+                                                                    <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                                                    <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                                                    <attachments>
+                                                                        <attachment title='Request' source='bb5f5ec6-f8bb-4a75-9ee6-1e2a65d50208-attachment.json' type='application/json' size='50'/>
+                                                                    </attachments>
+                                                                    <steps>
+                                                                        <step start='1529665050470' status='failed' stop='1529665050483'>
+                                                                            <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                                                            <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                                                            <attachments>
+                                                                                <attachment title='Request' source='08d45384-5764-4d31-962e-bffe53d9b15d-attachment.json' type='application/json' size='50'/>
+                                                                            </attachments>
+                                                                            <steps>
+                                                                                <step start='1529665050470' status='failed' stop='1529665050483'>
+                                                                                    <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                                                                                    <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                                                                                    <attachments>
+                                                                                        <attachment title='Request' source='e28ad60d-4691-4d70-a3d6-34130eaab6cb-attachment.json' type='application/json' size='52'/>
+                                                                                    </attachments>
+                                                                                    <steps/>
+                                                                                </step>
+                                                                            </steps>
+                                                                        </step>
+                                                                    </steps>
+                                                                </step>
+                                                            </steps>
+                                                        </step>
+                                                    </steps>
+                                                </step>
+                                            </steps>
+                                        </step>
+                                    </steps>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1529665050485' status='undefined'>
+                    <name>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</name>
+                    <title>POST /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/element</title>
+                    <attachments>
+                        <attachment title='Request' source='59bee3c6-c4af-4261-8da7-5c3f0a7797dc-attachment.json' type='application/json' size='52'/>
+                    </attachments>
+                    <steps>
+                        <step start='1529665050492' status='undefined'>
+                            <name>GET /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/window_handles</name>
+                            <title>GET /wd/hub/session/c24f8bfdee29fdf2cc0195ddbb51ea5b/window_handles</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Expected Object({ defer: defer({ promise: [object Promise], resolve: Function, fulfill: Function, reject: Function, notify: Function }), promise: [object Promise], lastPromise: [object Promise], desiredCapabilities: Object({ javascriptEnabled: true, locationContextEnabled: true, handlesAlerts: true, rotatable: true, maxInstances: 5, browserName: 'chrome', chromeOptions: Object({ args: [ '--disable-gpu', '--disable-impl-side-painting', '--disable-gpu-sandbox', '--disable-accelerated-2d-canvas', '--disable-accelerated-jpeg-decoding', '--no-sandbox', '--test-type=ui' ] }), loggingPrefs: Object({ browser: 'ALL', driver: 'ALL' }) }), requestHandler: RequestHandler({ sessionID: 'c24f8bfdee29fdf2cc0195ddbb51ea5b', startPath: '/wd/hub', gridApiStartPath: '/grid/api', eventHandler: EventEmitter({ domain: null, _events: null({ command: [ Function, Function ], info: Function, result: [ Function, Function ], error: [ Function, Function ], init: Function, screenshot: Function, log: Function }), _eventsCount ... to be true.</message>
+                <stack-trace>Error: Expected Object({ defer: defer({ promise: [object Promise], resolve: Function, fulfill: Function, reject: Function, notify: Function }), promise: [object Promise], lastPromise: [object Promise], desiredCapabilities: Object({ javascriptEnabled: true, locationContextEnabled: true, handlesAlerts: true, rotatable: true, maxInstances: 5, browserName: 'chrome', chromeOptions: Object({ args: [ '--disable-gpu', '--disable-impl-side-painting', '--disable-gpu-sandbox', '--disable-accelerated-2d-canvas', '--disable-accelerated-jpeg-decoding', '--no-sandbox', '--test-type=ui' ] }), loggingPrefs: Object({ browser: 'ALL', driver: 'ALL' }) }), requestHandler: RequestHandler({ sessionID: 'c24f8bfdee29fdf2cc0195ddbb51ea5b', startPath: '/wd/hub', gridApiStartPath: '/grid/api', eventHandler: EventEmitter({ domain: null, _events: null({ command: [ Function, Function ], info: Function, result: [ Function, Function ], error: [ Function, Function ], init: Function, screenshot: Function, log: Function }), _eventsCount ... to be true.
+                    at &lt;Jasmine>
+                    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js:40:57)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
