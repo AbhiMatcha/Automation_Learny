@@ -22,8 +22,7 @@ function suportFunction(username,password,title,description){
   }); 
 	beforeAll(function(){
  	  browser.windowHandleFullscreen();
-      support_page.support.open('learn/Learn?'); 
-
+      support_page.support.open('learn/Learn?');
   	  logout_com.login_signupFlow.waitForExist(5000);
   	  logout_com.login_signupFlow.click();
   	 /*Taking elements from signup components*/

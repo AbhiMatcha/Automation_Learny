@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1529904267699' stop='1529904332766'>
+    <name> -- Testing signup Page --   -- Testing signup Page -- </name>
+    <title> -- Testing signup Page --   -- Testing signup Page -- </title>
+    <test-cases>
+        <test-case start='1529904332709' status='passed' stop='1529904332759'>
+            <name>-----> should be signed-up by user and confirm alert is displayed</name>
+            <title>-----> should be signed-up by user and confirm alert is displayed</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"Chrome","services":["phantomjs",{},"testingbot"],"chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1529904332714' status='passed' stop='1529904332736'>
+                    <name>POST /wd/hub/session/2077eb4457d77ff7d4e51a041b93a758/element</name>
+                    <title>POST /wd/hub/session/2077eb4457d77ff7d4e51a041b93a758/element</title>
+                    <attachments>
+                        <attachment title='Request' source='d39844ad-f7af-4008-bf3e-5280b14e9640-attachment.json' type='application/json' size='51'/>
+                        <attachment title='Response' source='2bcd2e91-0c76-45e8-bb9f-fee78256edf2-attachment.json' type='application/json' size='137'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529904332739' status='passed' stop='1529904332757'>
+                    <name>GET /wd/hub/session/2077eb4457d77ff7d4e51a041b93a758/element/0.27511721850019577-3/displayed</name>
+                    <title>GET /wd/hub/session/2077eb4457d77ff7d4e51a041b93a758/element/0.27511721850019577-3/displayed</title>
+                    <attachments>
+                        <attachment title='Response' source='2ba86b1e-3c10-4d8c-8c20-bbb23cc1d8f8-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1529904332760' status='passed' stop='1529904332764'>
+                    <name>GET /wd/hub/sessions</name>
+                    <title>GET /wd/hub/sessions</title>
+                    <attachments>
+                        <attachment title='Response' source='47ae118e-8ba1-4a61-af65-b40068210aca-attachment.json' type='application/json' size='1426'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

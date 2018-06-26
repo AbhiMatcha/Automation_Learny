@@ -1,5 +1,11 @@
 var selenium = require('selenium-standalone');
 var seleniumServer;
+const host= 'localhost';
+const port= 4444;
+
+  // the following line helps stopping the chromedriver process after
+  // killing the selenium process returned by the start method
+
 exports.config = {
     //
     // ==================
@@ -11,10 +17,11 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        // './test/classroom/specs/core/main.js'
-        // './test/courseMaker/specs/core/main.js'
-                './test/specs/_main_.js'
-
+                './test/specs/_main_.js',
+                // './test/specs/login_Spec.js',
+                // './test/specs/support_Spec.js',
+                // './test/specs/logout_Spec.js'
+                // './test/specs/buyCourse_Spec.js'
       ],
     // Patterns to exclude.
     exclude: [
@@ -36,7 +43,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -46,31 +53,35 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instance available you can make sure that not more than
         // 5 instance gets started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
-        browserName: 'phantomjs',
-        services: ['phantomjs',selenium,'testingbot'],
-            user: process.env.TB_KEY,
-            key: process.env.TB_SECRET,
-            tbTunnel: true,
+        browserName: 'chrome',
+        // services: ['phantomjs','testingbot', 'selenium-standalone'],
+        
+        services: ['chromedriver'],
 
-            phantomjsOpts: {
-                webdriverLogfile: 'phantomjs.log',
-                maxInstances: 1,
-                ignoreSslErrors: true 
-            },
-    /**************/
-        // chromeOptions: {
-        //         args: [
-        //             '--disable-gpu',
-        //             '--disable-impl-side-painting',
-        //             '--disable-gpu-sandbox',
-        //             '--disable-accelerated-2d-canvas',
-        //             '--disable-accelerated-jpeg-decoding',
-        //             '--no-sandbox',
-        //             '--test-type=ui',
-        //             ],
+        chromeDriverArgs: ['--port=9999'],
+        //     user: process.env.TB_KEY,
+        //     key: process.env.TB_SECRET,
+        //     tbTunnel: true,
+
+        //     phantomjsOpts: {
+        //         webdriverLogfile: 'phantomjs.log',
+        //         maxInstances: 1,
+        //         ignoreSslErrors: true 
         //     },
+    /**************/
+        chromeOptions: {
+                args: [
+                    '--disable-gpu',
+                    '--disable-impl-side-painting',
+                    '--disable-gpu-sandbox',
+                    '--disable-accelerated-2d-canvas',
+                    '--disable-accelerated-jpeg-decoding',
+                    '--no-sandbox',
+                    '--test-type=ui',
+                    ],
+            },
     }],
     //
     // ===================
@@ -204,6 +215,60 @@ exports.config = {
     });
     },
 
+  
+    /**
+
+     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) ends.
+     * @param {Object} test test details
+     */
+    afterTest: function (test) {
+        console.log('@@@@@@@@@@@@@@ afterTest @@@@@@@@@@');
+        console.log(test);
+    },
+    /**
+     * Hook that gets executed after the suite has ended
+     * @param {Object} suite suite details
+     */
+     afterCommand: function(commandName, args, result, error)
+     {
+        console.log(commandName, args, result, error);
+
+     },
+    afterSuite: function (suite) {
+
+        console.log('@@@@@@@@@@@@@@ afterSuite @@@@@@@@@@');
+        console.log(suite);
+        // process.kill(0);
+    },
+    /**
+     * Gets executed after all tests are done. You still have access to all global variables from
+     * the test.
+     * @param {Number} result 0 - test pass, 1 - test fail
+     * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {Array.<String>} specs List of spec file paths that ran
+     */
+     afterAll: function (result, capabilities,specs,exitCode) {
+        console.log('@@@@@@@@@@@@@@ after @@@@@@@@@@');
+        console.log(result);
+        console.log(capabilities);
+        console.log(specs);
+        console.log(exitCode);
+        // process.kill(0);
+    },
+
+    // after: async () => {
+    //    console.log('@@@@@@@@@@@@@@ after @@@@@@@@@@'); 
+    //     await browser.pause(2000);
+    // },
+
+    afterSession: function (config, capabilities, specs) {
+        console.log('@@@@@@@@@@@@@@ afterSession @@@@@@@@@@');
+        console.log(config);
+        console.log(Capabilities);
+        console.log(specs);
+       
+    },
+
     // services: [CustomService],
     //
     // Gets executed before test execution begins. At this point you can access all global
@@ -241,19 +306,13 @@ exports.config = {
     // afterTest: function (test) {
     // },
     //
-     after: function (result, capabilities,specs,exitCode) {
-
-    },
-
-    afterSession: function (config, capabilities, specs) {
-        console.log('@@@@@@@@@@@@@@ afterSession @@@@@@@@@@');
-       
-    },
-
+    
     onError: function(message,a,b,c) {
         console.log('@@@@@@@@@@ onError @@@@@@@@@@', message);
          console.log(seleniumServer);
          console.log(exitCode);
+          console.log(message);
+        console.log(result);
          seleniumServer.kill();
     },
 

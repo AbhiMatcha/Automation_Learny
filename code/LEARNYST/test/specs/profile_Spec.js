@@ -14,7 +14,9 @@ Scenario: 1. User should be signed-in through sign-up flow.
 //     saveNumber(global.TestData.CONTACT,global.forenroll.Random_email.value(),global.forenroll.password);
 // });
 
-function saveNumber(contact,username,pass){
+// function saveNumber(contact,username,pass){
+   function saveNumber(contact){
+  
 describe(" -- Testing Logout Page -- ", function() {
   beforeEach(function() {
       timerCallback = jasmine.createSpy("timerCallback");
