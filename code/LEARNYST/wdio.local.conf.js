@@ -55,33 +55,33 @@ exports.config = {
         // 5 instance gets started at a time.
         maxInstances: 1,
         //
-        browserName: 'chrome',
+        browserName: 'phantomjs',
         // services: ['phantomjs','testingbot', 'selenium-standalone'],
         
-        services: ['chromedriver'],
+        services: ['phantomjs'],
 
-        chromeDriverArgs: ['--port=9999'],
+        // chromeDriverArgs: ['--port=9999'],
         //     user: process.env.TB_KEY,
         //     key: process.env.TB_SECRET,
         //     tbTunnel: true,
 
-        //     phantomjsOpts: {
-        //         webdriverLogfile: 'phantomjs.log',
-        //         maxInstances: 1,
-        //         ignoreSslErrors: true 
-        //     },
-    /**************/
-        chromeOptions: {
-                args: [
-                    '--disable-gpu',
-                    '--disable-impl-side-painting',
-                    '--disable-gpu-sandbox',
-                    '--disable-accelerated-2d-canvas',
-                    '--disable-accelerated-jpeg-decoding',
-                    '--no-sandbox',
-                    '--test-type=ui',
-                    ],
+            phantomjsOpts: {
+                webdriverLogfile: 'phantomjs.log',
+                maxInstances: 1,
+                ignoreSslErrors: true 
             },
+    // /**************/
+    //     chromeOptions: {
+    //             args: [
+    //                 '--disable-gpu',
+    //                 '--disable-impl-side-painting',
+    //                 '--disable-gpu-sandbox',
+    //                 '--disable-accelerated-2d-canvas',
+    //                 '--disable-accelerated-jpeg-decoding',
+    //                 '--no-sandbox',
+    //                 '--test-type=ui',
+    //                 ],
+    //         },
     }],
     //
     // ===================
