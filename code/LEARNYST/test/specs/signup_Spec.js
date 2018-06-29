@@ -21,9 +21,9 @@ function signup(username,pass)
 		},  60);
 	});
 
-	// afterAll(function(){
- //      browser.sessions();
- //    });
+	// // afterAll(function(){
+ // //      browser.sessions();
+ // //    });
 
     beforeAll(function(){
     	browser.sessions();

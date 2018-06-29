@@ -4,9 +4,9 @@ Suite for classroom (automation)
 */
 // var loginSpec = require('./login_Spec');
 // var logoutSpec = require('./logout_Spec');
-var signupSpec = require('./signup_Spec');
-var saveNumber = require('./profile_Spec');
-var global = require('./Global_data');
+var signup = require('./signup_Spec');
+// var saveNumber = require('./profile_Spec');
+var global = require('../Temporary/Global_data');
 /* 
 check Login, Logout, Sinup module
 */
@@ -20,12 +20,12 @@ check Login, Logout, Sinup module
 
 describe(" -- Testing signup Page : main -- ", function() {
    
-	signupSpec(global.forenroll.Random_email.value(),global.forenroll.password);
+	signup(SignupPage.Signup.Random_email(),SignupPage.Signup.Enter_Password);
 
 });
 
 it('-----> should be signed-in by user : main',function() {
-  expect(true).toBe(true);
+  expect(SignupPage.Signup.Signup_forFree.isVisible()).toBe(true);
 //       expect(SignupPage.Signup.Signup_forFree.isVisible()).toBe(true);
 //   // expect(LoginPage.Login.login_button.isVisible()).toBe(true); 
   });
