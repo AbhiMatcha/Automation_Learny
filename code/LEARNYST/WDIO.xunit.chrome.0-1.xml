@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Testing_support_test_Page" timestamp="2018-06-29T12:33:51" time="4.023" tests="1" failures="0" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="715e5de0ec7a6b1180941ae0202c313e"/>
+      <property name="suiteName" value=" -- Testing support test Page -- "/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/support_Spec.js"/>
+    </properties>
+    <testcase classname="chrome.Testing_support_test_Page" name="support_should_be_taken_by_user" time="0.035">
+      <error message="Failed: window is not defined"/>
+      <system-err>
+        <![CDATA[
+    at <Jasmine>
+    at UserContext.<anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/support_Spec.js:17:4)
+    at <Jasmine>
+]]>
+      </system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

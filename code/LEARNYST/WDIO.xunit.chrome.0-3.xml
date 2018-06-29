@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Testing_Course_Page" timestamp="2018-06-29T12:34:01" time="0.249" tests="1" failures="0" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="7ce668189aac8bfe5eeab73b3f3571d3"/>
+      <property name="suiteName" value=" -- Testing Course Page -- "/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/buyCourse_Spec.js"/>
+    </properties>
+    <testcase classname="chrome.Testing_Course_Page" name="course_should_be_enrolled_by_user" time="0.008">
+      <error message="Failed: window is not defined"/>
+      <system-err>
+        <![CDATA[
+    at <Jasmine>
+    at UserContext.<anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/buyCourse_Spec.js:25:5)
+    at <Jasmine>
+]]>
+      </system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,5 +1,4 @@
 'use strict';
-
 var SignupPage = require('../pages/signup_Page');
 var timerCallback;
 /* 
@@ -8,22 +7,23 @@ Scenario:
           1.User should be signup.
           2.User should be able to see the confirm mail alert.
 */
-// describe(" -- Testing signup Page -- ", function() {
-// 	signup(SignupPage.Signup.Random_email(),SignupPage.Signup.Enter_Password);
-// });	
+describe(" -- Testing signup Page -- ", function() {
+	signup(SignupPage.Signup.Random_email(),SignupPage.Signup.Enter_Password);
+});	
 function signup(username,pass)
 {			
-	describe(" -- Testing signup Page -- ", function() {
+	// describe(" -- Testing signup Page -- ", function() {
 		beforeEach(function() {
-      timerCallback = jasmine.createSpy("timerCallback");
-      jasmine.clock().install();
-      setTimeout(function() {
-          timerCallback();
-    },  60);
-    }); 
-	afterAll(function(){
-      browser.sessions();
-    });
+		timerCallback = jasmine.createSpy("timerCallback");
+		jasmine.clock().install();
+		setTimeout(function() {
+			timerCallback();
+		},  60);
+	});
+
+	// afterAll(function(){
+ //      browser.sessions();
+ //    });
 
     beforeAll(function(){
     	browser.sessions();
@@ -43,7 +43,7 @@ function signup(username,pass)
 			expect(SignupPage.Signup.Signup_forFree.isVisible()).toBe(true);
 			
 		});	
-	});	
+	// });	
 }
 
 module.exports=signup;

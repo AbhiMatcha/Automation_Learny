@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Testing_signup_Page" timestamp="2018-06-25T18:56:00" time="5.115" tests="0" failures="0" errors="0" skipped="0">
+  <testsuite name="Testing_Login_Page" timestamp="2018-06-29T12:33:42" time="7.267" tests="1" failures="0" errors="1" skipped="0">
     <properties>
-      <property name="specId" value="61e29a748dc4138e63fe2deedd39d3bc"/>
-      <property name="suiteName" value=" -- Testing signup Page -- "/>
-      <property name="capabilities" value="chrome"/>
-      <property name="file" value="./test/specs/_main_.js"/>
-    </properties>
-  </testsuite>
-  <testsuite name="Testing_Login_Page" timestamp="2018-06-25T18:56:00" time="5.105" tests="1" failures="0" errors="0" skipped="0">
-    <properties>
-      <property name="specId" value="61e29a748dc4138e63fe2deedd39d3bc"/>
+      <property name="specId" value="4f61e742526859898197b05464b5a20b"/>
       <property name="suiteName" value=" -- Testing Login Page -- "/>
       <property name="capabilities" value="chrome"/>
-      <property name="file" value="./test/specs/_main_.js"/>
+      <property name="file" value="./test/specs/login_Spec.js"/>
     </properties>
-    <testcase classname="chrome.Testing_Login_Page" name="should_be_logged_in_by_user" time="0.046"/>
+    <testcase classname="chrome.Testing_Login_Page" name="should_be_logged_in_by_user" time="2.255">
+      <error message="Failed: window is not defined"/>
+      <system-err>
+        <![CDATA[
+    at <Jasmine>
+    at UserContext.<anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js:18:5)
+    at <Jasmine>
+]]>
+      </system-err>
+    </testcase>
   </testsuite>
 </testsuites>

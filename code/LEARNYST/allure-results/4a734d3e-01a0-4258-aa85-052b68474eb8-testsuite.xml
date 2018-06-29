@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1530255822100' stop='1530255829368'>
+    <name> -- Testing Login Page -- </name>
+    <title> -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1530255827107' status='failed' stop='1530255829362'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"Chrome","services":["selenium-standalone"],"chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1530255827113' status='passed' stop='1530255829090'>
+                    <name>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/element</name>
+                    <title>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/element</title>
+                    <attachments>
+                        <attachment title='Request' source='a9344429-2d08-43ad-bed2-a4a08a57c141-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='14b0aef3-51be-403a-b8d3-09c19391ddc2-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530255829092' status='passed' stop='1530255829110'>
+                    <name>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/window/fullscreen</name>
+                    <title>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/window/fullscreen</title>
+                    <attachments>
+                        <attachment title='Response' source='21e8ad06-54a0-4d13-ac59-ae614a76b92b-attachment.json' type='application/json' size='590'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530255829115' status='passed' stop='1530255829308'>
+                    <name>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/elements</name>
+                    <title>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='7543c742-08bc-492d-9c3a-10e73889970e-attachment.json' type='application/json' size='52'/>
+                        <attachment title='Response' source='f02ec509-28e7-4375-8dcb-1188c7739520-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530255829316' status='passed' stop='1530255829349'>
+                    <name>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/element</name>
+                    <title>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/element</title>
+                    <attachments>
+                        <attachment title='Request' source='565afd0e-0ed6-4a33-8a7d-69f50f0bcfab-attachment.json' type='application/json' size='70'/>
+                        <attachment title='Response' source='e475d7c9-509a-493b-ad52-b8957ad5b16c-attachment.json' type='application/json' size='89'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530255829366' status='undefined'>
+                    <name>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/elements</name>
+                    <title>POST /wd/hub/session/77013d332ef8950bab68f0d0ceb98643/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='c1666fd6-cfae-45d8-aa0f-a50b54a37ce9-attachment.json' type='application/json' size='70'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Response' source='ac29966b-0243-4997-bc51-fb98d39370de-attachment.json' type='application/json' size='626'/>
+            </attachments>
+            <failure>
+                <message>Failed: window is not defined</message>
+                <stack-trace>    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/login_Spec.js:18:5)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

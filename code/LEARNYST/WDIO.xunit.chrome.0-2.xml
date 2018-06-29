@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Testing_Logout_Page" timestamp="2018-06-29T12:33:56" time="2.712" tests="1" failures="0" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="1aaa415f1e6c259ccf881d86c5184f9b"/>
+      <property name="suiteName" value=" -- Testing Logout Page -- "/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/logout_Spec.js"/>
+    </properties>
+    <testcase classname="chrome.Testing_Logout_Page" name="should_be_logged_out_by_user_1" time="0.023">
+      <error message="Failed: window is not defined"/>
+      <system-err>
+        <![CDATA[
+    at <Jasmine>
+    at UserContext.<anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/logout_Spec.js:23:5)
+    at <Jasmine>
+]]>
+      </system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

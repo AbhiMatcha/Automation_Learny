@@ -1,0 +1,101 @@
+{
+    "status": 0,
+    "value": [
+        {
+            "id": "e73e1cb2c0fe1d8990019d262c9a853b",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.7anHaW"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        },
+        {
+            "id": "84205ecaf8e951e4dae6c76223409112",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.viLD0h"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        },
+        {
+            "id": "e3820ac0c9b06447824fa86eb656479f",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.Sz7wYn"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        }
+    ]
+}

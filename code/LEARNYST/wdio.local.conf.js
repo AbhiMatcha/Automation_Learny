@@ -2,7 +2,6 @@ var selenium = require('selenium-standalone');
 var seleniumServer;
 const host= 'localhost';
 const port= 4444;
-
   // the following line helps stopping the chromedriver process after
   // killing the selenium process returned by the start method
 
@@ -16,13 +15,22 @@ exports.config = {
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
-    specs: [
-                './test/specs/_main_.js',
-                // './test/specs/login_Spec.js',
-                // './test/specs/support_Spec.js',
-                // './test/specs/logout_Spec.js'
-                // './test/specs/buyCourse_Spec.js'
-      ],
+    specs: ['./test/specs/login_Spec.js'],
+
+    // suites: {
+    //     login: [
+    //         './test/specs/login_Spec.js',
+            
+    //     ],
+    //     logout: [
+    //         './test/specs/logout_Spec.js',
+    //         // ...
+    //     ]
+    // },
+    //             // './test/specs/_main_.js',
+                
+                // './test/specs/support_Spec.js','./test/specs/logout_Spec.js','./test/specs/buyCourse_Spec.js'
+      
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -43,7 +51,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 10,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -55,33 +63,35 @@ exports.config = {
         // 5 instance gets started at a time.
         maxInstances: 1,
         //
-        browserName: 'phantomjs',
-        // services: ['phantomjs','testingbot', 'selenium-standalone'],
-        
-        services: ['phantomjs'],
-
+        browserName: 'Chrome',
+        services: ['selenium-standalone'],
+        // port: '9515',
+        // path: '/',
+        // // services: ['selenium-standalone'],
+        // chromeDriverArgs: ['--port=9999'],
+        // chromeDriverLogs: './',
         // chromeDriverArgs: ['--port=9999'],
         //     user: process.env.TB_KEY,
         //     key: process.env.TB_SECRET,
         //     tbTunnel: true,
 
-            phantomjsOpts: {
-                webdriverLogfile: 'phantomjs.log',
-                maxInstances: 1,
-                ignoreSslErrors: true 
-            },
+            // phantomjsOpts: {
+            //     webdriverLogfile: 'phantomjs.log',
+            //     maxInstances: 1,
+            //     ignoreSslErrors: true 
+            // },
     // /**************/
-    //     chromeOptions: {
-    //             args: [
-    //                 '--disable-gpu',
-    //                 '--disable-impl-side-painting',
-    //                 '--disable-gpu-sandbox',
-    //                 '--disable-accelerated-2d-canvas',
-    //                 '--disable-accelerated-jpeg-decoding',
-    //                 '--no-sandbox',
-    //                 '--test-type=ui',
-    //                 ],
-    //         },
+        chromeOptions: {
+                args: [
+                    '--disable-gpu',
+                    '--disable-impl-side-painting',
+                    '--disable-gpu-sandbox',
+                    '--disable-accelerated-2d-canvas',
+                    '--disable-accelerated-jpeg-decoding',
+                    '--no-sandbox',
+                    '--test-type=ui',
+                    ],
+            },
     }],
     //
     // ===================
@@ -94,7 +104,7 @@ exports.config = {
     // By default WebdriverIO commands are executed in a synchronous way using
     // the wdio-sync package. If you still want to run your tests in an async way
     // e.g. using promises you can set the sync option to false.
-    // sync: true,
+    sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
     logLevel: 'silent',
@@ -169,21 +179,21 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['spec', 'allure','junit'],
-    reporterOptions: {
-        allure: {
-            outputDir: 'allure-results'
-        },
-        junit: {
-            outputDir: './'
-        }
-    },
+    // reporters: ['spec', 'allure','junit'],
+    // reporterOptions: {
+    //     allure: {
+    //         outputDir: 'allure-results'
+    //     },
+    //     junit: {
+    //         outputDir: './'
+    //     }
+    // },
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
         //
         // Jasmine default timeout
-        defaultTimeoutInterval: (24*60*60*1000),
+        defaultTimeoutInterval: 5000,
       
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
@@ -204,6 +214,7 @@ exports.config = {
     //
     // Gets executed once before all workers get launched.
     onPrepare: function (config, capabilities) {
+        seleniumServer = seleniumServer;
      return new Promise((resolve, reject) => {
         selenium.start((err, process) => {
          if(err) {
@@ -211,7 +222,18 @@ exports.config = {
         }
         seleniumServer = process;
         resolve(seleniumServer);
-      })
+      }, function (error, child) {
+        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+        console.log('stop', error, child)
+        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+  if (!error) {
+    // work with webdriverio and when finished, stop selenium:
+    console.log('*****************************************************');
+    child.kill()
+    console.log('*****************************************************');
+    // both selenium server and chromedriver process should exit
+  }
+})
     });
     },
 
@@ -224,22 +246,26 @@ exports.config = {
     afterTest: function (test) {
         console.log('@@@@@@@@@@@@@@ afterTest @@@@@@@@@@');
         console.log(test);
+        console.log('@@@@@@@@@@@@@@  afterTest @@@@@@@@@@');
     },
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
      */
-     afterCommand: function(commandName, args, result, error)
-     {
-        console.log(commandName, args, result, error);
+     // afterCommand: function(commandName, args, result, error)
+     // {
+     //    console.log('######### afterCommand #########')
+     //    console.log(commandName, args, result, error);
+     //    console.log('######## afterCommand ##########')
 
-     },
-    afterSuite: function (suite) {
+    //  // },
+    // afterSuite: function (suite) {
 
-        console.log('@@@@@@@@@@@@@@ afterSuite @@@@@@@@@@');
-        console.log(suite);
-        // process.kill(0);
-    },
+    //     console.log('@@@@@@@@@@@@@@ afterSuite @@@@@@@@@@');
+    //     console.log(suite);
+    //     console.log('@@@@@@@@@@@@@@ afterSuite  @@@@@@@@@@');
+    //     // process.kill(0);
+    // },
     /**
      * Gets executed after all tests are done. You still have access to all global variables from
      * the test.
@@ -248,11 +274,12 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that ran
      */
      afterAll: function (result, capabilities,specs,exitCode) {
-        console.log('@@@@@@@@@@@@@@ after @@@@@@@@@@');
+        console.log('@@@@@@@@@@@@@@ afterAll @@@@@@@@@@');
         console.log(result);
         console.log(capabilities);
         console.log(specs);
         console.log(exitCode);
+        console.log('@@@@@@@@@@@@@@ afterAll  @@@@@@@@@@');
         // process.kill(0);
     },
 
@@ -260,14 +287,26 @@ exports.config = {
     //    console.log('@@@@@@@@@@@@@@ after @@@@@@@@@@'); 
     //     await browser.pause(2000);
     // },
+    // after: function (result, capabilities, specs) {
+    //     console.log('@@@@@@@@@@@@@@ after @@@@@@@@@@');
 
-    afterSession: function (config, capabilities, specs) {
-        console.log('@@@@@@@@@@@@@@ afterSession @@@@@@@@@@');
-        console.log(config);
-        console.log(Capabilities);
-        console.log(specs);
-       
-    },
+    //     console.log(result);
+
+    //     console.log('@@@@@@@@@@@@@@ after @@@@@@@@@@');
+
+
+    // },
+
+
+    // afterSession: function (config, capabilities, specs) {
+    //     console.log('@@@@@@@@@@@@@@ afterSession @@@@@@@@@@');
+    //     console.log(config);
+    //     console.log(Capabilities);
+    //     console.log(specs);
+    //     // browser.end().pause(1000);
+    //     console.log('@@@@@@@@@@@@@@ afterSession @@@@@@@@@@');
+        
+    // },
 
     // services: [CustomService],
     //
@@ -308,14 +347,15 @@ exports.config = {
     //
     
     onError: function(message,a,b,c) {
-        console.log('@@@@@@@@@@ onError @@@@@@@@@@', message);
-         console.log(seleniumServer);
-         console.log(exitCode);
+    
+        console.log('@@@@@@@@@@ onError @@@@@@@@@@');
+         // console.log(seleniumServer);
+         // console.log(0);
           console.log(message);
-        console.log(result);
-         seleniumServer.kill();
+          console.log('@@@@@ onError @@@@@')
+        // console.log(result);
+      
     },
-
     // Hook that gets executed after the suite has ended
     // afterSuite: function (suite) {
     // },
@@ -328,8 +368,7 @@ exports.config = {
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
     onComplete: function(exitCode,config,capabilities) {
-        console.log("@@ testonComplete @@@");
-        console.log(exitCode);
         seleniumServer.kill();
-       }
+        console.log("@@ test Complete @@@");
+    }
 }

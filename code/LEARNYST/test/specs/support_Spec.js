@@ -1,25 +1,26 @@
 var support_page = require('../pages/support_Page');
 var signup_com = require('../Components/signup_Com');
 var logout_com = require('../Components/logout_Com');
-var global = require('./Global_data');
+var global = require('../Temporary/Global_data');
 var timerCallback;
 	/* 
 Calling the login function from Login_spec,
 Scenario: User should be logged-in through sign-up flow.      
 */
-describe(" -- Testing free test Page -- ", function() {
+describe(" -- Testing support test Page -- ", function() {
   suportFunction(global.forenroll.Random_email.value(),global.forenroll.password,global.support.title,global.support.description);
   });
 
 function suportFunction(username,password,title,description){
-
+// describe(" -- Testing free test Page -- ", function() {
 	beforeEach(function() {
-	  timerCallback = jasmine.createSpy("timerCallback");
- 	  jasmine.clock().install();
- 	  setTimeout(function() {
- 	  timerCallback();
-    },);
-  }); 
+		timerCallback = jasmine.createSpy("timerCallback");
+		jasmine.clock().install();
+		setTimeout(function() {
+			timerCallback();
+		},  60);
+	});
+
 	beforeAll(function(){
  	  browser.windowHandleFullscreen();
       support_page.support.open('learn/Learn?');
@@ -50,11 +51,11 @@ function suportFunction(username,password,title,description){
 	  support_page.support.Signup_support.waitForExist(3000);
 	  });
 
-	it('-----> should be complete test-in by user',function() {
+	it('-----> support should be taken by user',function() {
 		expect(support_page.support.submitConfirmation.isVisible()).toBe(true);
 	  
 	});
- 
+ // });
 }
 
 module.exports= suportFunction;

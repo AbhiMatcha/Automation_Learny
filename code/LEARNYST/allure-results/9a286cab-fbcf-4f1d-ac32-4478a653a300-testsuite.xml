@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1530255836924' stop='1530255839636'>
+    <name> -- Testing Logout Page -- </name>
+    <title> -- Testing Logout Page -- </title>
+    <test-cases>
+        <test-case start='1530255839612' status='failed' stop='1530255839635'>
+            <name>-----> should be logged-out by user 1</name>
+            <title>-----> should be logged-out by user 1</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"Chrome","services":["selenium-standalone"],"chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/logout_Spec.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1530255839615' status='passed' stop='1530255839622'>
+                    <name>POST /wd/hub/session/a6f0122252108f210205467a8c7daadd/element</name>
+                    <title>POST /wd/hub/session/a6f0122252108f210205467a8c7daadd/element</title>
+                    <attachments>
+                        <attachment title='Request' source='fd018e18-f447-4ee7-9a61-1745499183fc-attachment.json' type='application/json' size='61'/>
+                        <attachment title='Response' source='ed96792e-2245-46cb-bcaa-1805f4940760-attachment.json' type='application/json' size='508'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530255839624' status='passed' stop='1530255839632'>
+                    <name>GET /wd/hub/session/a6f0122252108f210205467a8c7daadd/screenshot</name>
+                    <title>GET /wd/hub/session/a6f0122252108f210205467a8c7daadd/screenshot</title>
+                    <attachments>
+                        <attachment title='Response' source='26ff7488-eb67-403a-8fc7-63388473518e-attachment.json' type='application/json' size='508'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Failed: window is not defined</message>
+                <stack-trace>    at &lt;Jasmine>
+                    at UserContext.&lt;anonymous> (/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/logout_Spec.js:23:5)
+                    at &lt;Jasmine></stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

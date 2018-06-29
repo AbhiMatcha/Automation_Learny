@@ -2,7 +2,7 @@
 var LogoutPage=require('../pages/logout_Page');
 var loginCom=require('../Components/login_Com');
 var profileCom=require('../Components/profile_Com');
-var global=require('./Global_data');
+var global = require('../Temporary/Global_data');
 var timerCallback;
 /* 
 Calling the logout function from Logout_spec,
@@ -19,13 +19,14 @@ function logout(userName,pass)
 //  function logout()
 {   
   // describe(" -- Testing Logout Page -- ", function() {
-    beforeEach(function() {
+  beforeEach(function() {
     timerCallback = jasmine.createSpy("timerCallback");
     jasmine.clock().install();
     setTimeout(function() {
-    timerCallback();
-      },600);
+      timerCallback();
+    },  60);
   });
+
   beforeAll(function() {
     LogoutPage.open('learn');
     browser.windowHandleFullscreen();

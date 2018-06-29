@@ -1,0 +1,56 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1530178109954' stop='1530178112950'>
+    <name> -- Testing signup Page --   -- Testing Login Page -- </name>
+    <title> -- Testing signup Page --   -- Testing Login Page -- </title>
+    <test-cases>
+        <test-case start='1530178112811' status='passed' stop='1530178112814'>
+            <name>-----> should be logged-in by user</name>
+            <title>-----> should be logged-in by user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='Chrome'/>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"Chrome","services":["selenium-standalone"],"port":"9515","path":"/","chromeDriverArgs":["--port=9999"],"chromeDriverLogs":"./","chromeOptions":{"args":["--disable-gpu","--disable-impl-side-painting","--disable-gpu-sandbox","--disable-accelerated-2d-canvas","--disable-accelerated-jpeg-decoding","--no-sandbox","--test-type=ui"]}}'/>
+                <parameter kind='environment-variable' name='spec files' value='["/Users/learnyst/Automation_Learny/Automation_Learny/code/LEARNYST/test/specs/_main_.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1530178112818' status='passed' stop='1530178112828'>
+                    <name>GET /wd/hub/session/217441b3f8e845d5c60e8558498d057e/window_handles</name>
+                    <title>GET /wd/hub/session/217441b3f8e845d5c60e8558498d057e/window_handles</title>
+                    <attachments>
+                        <attachment title='Response' source='5d96860e-dd9c-4af3-ae7f-e31d7cecd990-attachment.json' type='application/json' size='146'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530178112828' status='passed' stop='1530178112909'>
+                    <name>DELETE /wd/hub/session/217441b3f8e845d5c60e8558498d057e/window</name>
+                    <title>DELETE /wd/hub/session/217441b3f8e845d5c60e8558498d057e/window</title>
+                    <attachments>
+                        <attachment title='Response' source='c4537f28-776f-42d2-885c-cd51dcdebdc2-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530178112910' status='passed' stop='1530178112933'>
+                    <name>POST /wd/hub/session/217441b3f8e845d5c60e8558498d057e/window</name>
+                    <title>POST /wd/hub/session/217441b3f8e845d5c60e8558498d057e/window</title>
+                    <attachments>
+                        <attachment title='Request' source='2ac12dc1-3e8a-4c28-b697-a483756e3425-attachment.json' type='application/json' size='118'/>
+                        <attachment title='Response' source='0ce30eaa-dbf3-4620-baeb-95d6632e1b65-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1530178112936' status='passed' stop='1530178112943'>
+                    <name>GET /wd/hub/session/217441b3f8e845d5c60e8558498d057e/screenshot</name>
+                    <title>GET /wd/hub/session/217441b3f8e845d5c60e8558498d057e/screenshot</title>
+                    <attachments>
+                        <attachment title='Response' source='919add7f-10dc-4df1-b698-7a6f99ece490-attachment.json' type='application/json' size='478'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

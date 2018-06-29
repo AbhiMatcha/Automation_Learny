@@ -1,0 +1,133 @@
+{
+    "status": 0,
+    "value": [
+        {
+            "id": "455fb957c0c136583f61c42aef9bbd6c",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.uiJlB3"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        },
+        {
+            "id": "71a32cbb8db99687033adac1c125e490",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.88Xnch"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        },
+        {
+            "id": "fded338bbcee71c48918dc26e69fbc26",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.Lm9Muw"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        },
+        {
+            "id": "ce41f5b1b02d2425b4af9d149fa6241c",
+            "capabilities": {
+                "acceptInsecureCerts": false,
+                "acceptSslCerts": false,
+                "applicationCacheEnabled": false,
+                "browserConnectionEnabled": false,
+                "browserName": "chrome",
+                "chrome": {
+                    "chromedriverVersion": "2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363)",
+                    "userDataDir": "/var/folders/8z/13d5v7zx60j1kvkfpwpx5wq00000gn/T/.org.chromium.Chromium.hfg5zy"
+                },
+                "cssSelectorsEnabled": true,
+                "databaseEnabled": false,
+                "handlesAlerts": true,
+                "hasTouchScreen": false,
+                "javascriptEnabled": true,
+                "locationContextEnabled": true,
+                "mobileEmulationEnabled": false,
+                "nativeEvents": true,
+                "networkConnectionEnabled": false,
+                "pageLoadStrategy": "normal",
+                "platform": "Mac OS X",
+                "rotatable": false,
+                "setWindowRect": true,
+                "takesHeapSnapshot": true,
+                "takesScreenshot": true,
+                "unexpectedAlertBehaviour": "",
+                "version": "67.0.3396.99",
+                "webStorageEnabled": true
+            }
+        }
+    ]
+}

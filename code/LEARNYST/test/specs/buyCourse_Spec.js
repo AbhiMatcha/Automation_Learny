@@ -1,7 +1,7 @@
 'use strict';
 var buycoursePage = require('../pages/buyCourse_Page');
 var logoutCom=('../Components/logout_Com');
-var global = require('./Global_data');
+var global = require('../Temporary/Global_data');
 var profileCom= require('../Components/profile_Com');
 var applyCoupon_com=require('../Components/applyCoupon_Com');
 var signUp_com=require('../Components/signup_Com');
@@ -22,16 +22,19 @@ function enrollCourse(contact,username,password,coupon)
 {	
   // describe(" -- Testing Course Page -- ", function() {
     beforeEach(function() {
-      timerCallback = jasmine.createSpy("timerCallback");
-      jasmine.clock().install();
-      setTimeout(function() {
-          timerCallback();
-        },60);
-    }); 
+    timerCallback = jasmine.createSpy("timerCallback");
+    jasmine.clock().install();
+    setTimeout(function() {
+      timerCallback();
+    },  60);
+  });
+
 
     beforeAll(function(){
       browser.windowHandleFullscreen();
-      browser.url('http://learnnew.learnyst.com/learn/My-First-Course');
+      buycoursePage.buycourse.open('learn/My-First-Course');
+      
+      // browser.url('http://learnnew.learnyst.com/learn/My-First-Course');
       /* Taking components from logout components*/
       logoutCom.login_signupFlow.waitForExist(5000);
       logoutCom.login_signupFlow.click();
@@ -84,7 +87,7 @@ function enrollCourse(contact,username,password,coupon)
     it('-----> course should be enrolled by user',function() {
       expect(buycoursePage.buycourse.VerifyPurchase.isVisible()).toBe(true);
     });  
-//});
+// });
 }
 
 module.exports= enrollCourse;
